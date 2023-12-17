@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Rowdies:wght@300;400;700&display=swap');
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-thin.otf') format('opentype');
+    font-weight: thin;
+    font-style: thin;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-light.otf') format('opentype');
+    font-weight: light;
+    font-style: light;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf') format('opentype');
+    font-weight: regular;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-medium.otf') format('opentype');
+    font-weight: medium;
+    font-style: medium;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-semibold.otf') format('opentype');
+    font-weight: semibold;
+    font-style: semibold;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-extrabold.otf') format('opentype');
+    font-weight: extrabold;
+    font-style: extrabold;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Demo_Fonts/Fontspring-DEMO-proximanova-black.otf') format('opentype');
+    font-weight: black;
+    font-style: black;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}

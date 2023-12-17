@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./src/images/dove_logo.png" />
+    <title>Haggai</title>
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link href="/src/styles/output.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-blue": "#3ADDFF",
+              "custom-red": "#FF0000",
+              "logo-red": "#D10000"
+            },
+            fontFamily: {
+              Poppins: ["Poppins", "san serif"],
+              Volkhov: ["Volkhov", "serif"],
+              Proxima: ["Proxima Nova", "san serif"]
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="relative">
+    <nav
+      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto md:pt-4 z-50">
+      <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
+        <a href="#" class="flex items-center gap-2 rtl:space-x-reverse">
+          <img
+            src="./src/images/dove_logo.png"
+            class="h-[33px] md:h-[37px]"
+            alt="Haggai Logo" />
+          <p
+            class="whitespace-nowrap dark:text-white font-Volkhov font-bold md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+            HAGGAI
+          </p>
+        </a>
+        <button
+          data-collapse-toggle="navbar-solid-bg"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-solid-bg"
+          aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+          <ul
+            class="flex flex-col mt-4 rounded-lg bg-gray-50 md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-white transition-all duration-300"
+                aria-current="page">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block md:hidden py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-gray-100">
+                Download Haggai
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="bg-gradient-to-r from-[#05182F] to-[#000913] py-8 md:py-14 min-h-screen w-full relative overflow-hidden border-box flex justify-center">
+      <img
+        src="./src/images/Decore.png"
+        class="hidden md:block absolute -right-1 -top-1 w-fit h-[91%] z-10"
+        alt="decoration" />
+      <img
+        src="./src/images/Decore-red.png"
+        class="hidden md:block absolute right-0 top-0 w-fit h-[90%] z-0"
+        alt="decoration" />
+      <img
+        src="./src/images/mobile-Decore.png"
+        class="block md:hidden absolute -right-[1px] -top-[1px] w-fit h-[50%] z-10"
+        alt="decoration" />
+      <img
+        src="./src/images/mobile-Decore-red.png"
+        class="block md:hidden absolute right-0 top-0 w-fit h-[50%] z-0"
+        alt="decoration" />
+      <div
+        class="w-11/12 relative mx-auto min-h-screen flex flex-col md:flex-row gap-6 md:justify-between items-center relative z-30">
+        <div
+          class="relative w-[300px] sm:w-[400px] text-center md:text-left flex flex-col items-center md:items-start md:w-[800px] md:w-[840px] gap-3.5 md:gap-5 border-box">
+          <h1
+            class="text-logo-red md:text-custom-red text-xs sm:text-sm md:text-base lg:text-lg font-Poppins font-bold uppercase">
+            Hello and welcome to HAGGAI!!
+          </h1>
+          <div class="relative">
+            <h2
+              class="text-white leading-[64px] text-[50px] md:text-[64px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov relative z-10 tracking-tighter">
+              Welcome to
+              <br class="md:hidden" />
+              the future of devotions
+            </h2>
+            <img
+              src="./src/images/brush_Decore.png"
+              class="absolute w-[380px] top-[80px] -right-6 z-0 hidden md:block"
+              alt="background design" />
+            <img
+              src="./src/images/mobile-brush-Decore.png"
+              class="absolute w-[330px] top-[120px] left-0 z-0 md:hidden"
+              alt="background design" />
+          </div>
+          <p class="text-white text-xs sm:text-sm md:text-base font-medium">
+            HAGGAI is a fusion of technology and Christianity designed to
+            provide you with easy and rapid access to information for your
+            Christian growth.
+          </p>
+          <div class="flex gap-6 mt-5 md:mt-0">
+            <a href="#" class="rounded-full w-[130px] sm:w-fit">
+              <img
+                src="./src/images/black-app-store-button.png"
+                alt="app store button" />
+            </a>
+            <a href="#" class="rounded-full w-[130px] sm:w-fit">
+              <img
+                src="./src/images/black-play-store-button.png"
+                alt="play store button" />
+            </a>
+          </div>
+        </div>
+        <div
+          class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-full flex justify-end">
+          <img
+            class="w-full md:w-11/12 md:mt-10 md:-mr-6"
+            src="./src/images/haggai_bunch.png"
+            alt="screen shot from haggai app" />
+        </div>
+      </div>
+      <img
+        src="./src/images/star-top.png"
+        class="absolute bottom-0 md:-bottom-4 left-0 h-[60px] md:h-[100px]"
+        alt="background design" />
+    </section>
+    <section class="relative py-8 md:py-14 bg-black text-white relative">
+      <img
+        src="./src/images/star-bottom.png"
+        class="absolute top-1 md:top-0 left-0 h-[48.5px] md:h-[80px]"
+        alt="background design" />
+      <div
+        class="w-11/12 mx-auto flex justify-center items-center gap-5 md:gap-16">
+        <div class="text-center flex flex-col justify-center items-center">
+          <p
+            class="text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            +2K
+          </p>
+          <p class="font-medium font-Poppins text-xs md:text-[25px]">
+            Downloads
+          </p>
+        </div>
+        <div
+          class="h-[50px] md:h-[70px] w-0.5 bg-white rounded-full mt-1"></div>
+        <div class="text-center">
+          <p
+            class="text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            +5K
+          </p>
+          <p class="font-medium font-Poppins text-xs md:text-[25px]">Audios</p>
+        </div>
+        <div
+          class="h-[50px] md:h-[70px] w-0.5 bg-white rounded-full mt-1"></div>
+        <div class="text-center">
+          <p
+            class="text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            +4K
+          </p>
+          <p class="font-medium font-Poppins text-xs md:text-[25px]">Videos</p>
+        </div>
+      </div>
+    </section>
+    <section class="relative py-8 md:py-14 bg-[#F2F6F9] text-white">
+      <div
+        class="w-11/12 mx-auto flex flex-col md:flex-row items-center gap-6 relative z-20">
+        <div
+          class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-start">
+          <img
+            src="./src/images/what-it-does-phone.png"
+            class="w-full"
+            alt="feature picture" />
+        </div>
+        <div
+          class="w-full md:w-1/2 text-center md:text-left flex flex-col gap-3">
+          <p
+            class="text-[#3F3F3F] text-sm sm:text-base md:text-base lg:text-lg font-semibold font-Poppins">
+            Our Features
+          </p>
+          <h2
+            class="text-[#14183E] text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            What Does it do?
+          </h2>
+          <div class="flex flex-col gap-3 md:gap-6">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4 w-full">
+              <div
+                class="flex justify-center items-center w-[49px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#F0BB1F] text-white font-Poppins font-bold">
+                <p>1.</p>
+              </div>
+              <div class="w-fit">
+                <p
+                  class="text-[#3F3F3F] font-Poppins font-bold text-sm sm:text-base">
+                  Devotions
+                </p>
+                <p class="font-Poppins text-[#545454] text-xs sm:text-base">
+                  We provide a variety of devotions, such as house fellowship,
+                  Sunday school for adults and teens, Open Heavens for adults
+                  and teens, and more built for your maximum convenience.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4 w-full">
+              <div
+                class="flex justify-center items-center w-[49px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#F15A2B] text-white font-Poppins font-bold">
+                <p>2.</p>
+              </div>
+              <div class="w-fit">
+                <p
+                  class="text-[#3F3F3F] font-Poppins font-bold text-sm sm:text-base">
+                  Images
+                </p>
+                <p class="font-Poppins text-[#545454] text-xs sm:text-base">
+                  Our image section is built to give you a recap of every day of
+                  the RCCG camp programs. It contains tons of pictures from past
+                  events.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4 w-full">
+              <div
+                class="flex justify-center items-center w-[49px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#006380] text-white font-Poppins font-bold">
+                <p>3.</p>
+              </div>
+              <div class="w-fit">
+                <p
+                  class="text-[#3F3F3F] font-Poppins font-bold text-sm sm:text-base">
+                  Sermon Recaps
+                </p>
+                <p class="font-Poppins text-[#545454] text-xs sm:text-base">
+                  Our sermon notes list is designed to help you remember
+                  previous sermons. You can also quickly access key concepts
+                  from previous events by simply reading the written text.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4 w-full">
+              <div
+                class="flex justify-center items-center w-[49px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#80007B] text-white font-Poppins font-bold">
+                <p>4.</p>
+              </div>
+              <div class="w-fit space-y-1">
+                <p
+                  class="text-[#3F3F3F] font-Poppins font-bold text-sm sm:text-base">
+                  Others
+                </p>
+                <p class="font-Poppins text-[#545454] text-xs sm:text-base">
+                  We have a ton more, including hymns, videos, mixlir, audios,
+                  note-taking, and a bible that is integrated into the
+                  application.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="w-fit mx-auto md:ml-0 mt-2 text-center md:text-left">
+            <a
+              href="#"
+              class="w-fit text-logo-red text-base md:text-base lg:text-lg font-semibold">
+              View all features
+            </a>
+          </p>
+        </div>
+      </div>
+      <img
+        src="./src/images/feature-design-blue.png"
+        class="absolute bottom-0 left-0 z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/feature-design-white.png"
+        class="absolute bottom-0 left-0 z-10 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-feature-blue-design.png"
+        class="absolute bottom-0 left-0 z-0 md:hidden w-full"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-feature-white-design.png"
+        class="absolute bottom-0 left-0 z-10 md:hidden w-full"
+        alt="background design" />
+      <img
+        src="./src/images/feature-stars-top.png"
+        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px]"
+        alt="background design" />
+    </section>
+    <section class="relative py-8 md:py-14 bg-[#FFFFFF] text-white">
+      <img
+        src="./src/images/feature-stars-bottom.png"
+        class="hidden md:block absolute top-0 right-0 h-[60px] md:h-[100px]"
+        alt="background design" />
+      <img
+        src="./src/images/why-blue-deco.png"
+        class="absolute top-0 left-0 z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/why-white-deco.png"
+        class="absolute top-0 left-0 z-10 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-why-blue.png"
+        class="absolute top-0 left-0 z-0 md:hidden w-full"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-why-white.png"
+        class="absolute top-0 left-0 z-10 md:hidden w-full"
+        alt="background design" />
+
+      <div
+        class="w-11/12 mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
+        <div
+          class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-end">
+          <img
+            src="./src/images/why-phone-screen.png"
+            class="w-full"
+            alt="feature picture" />
+        </div>
+        <div
+          class="w-full md:w-1/2 flex flex-col gap-3">
+          <h2
+            class="text-[#14183E] text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            Why HAGGAI?
+          </h2>
+          <div class="text-[#545454] text-xs sm:text-base space-y-2 font-Poppins">
+            <p>
+              As the Lord instructed the prophet HAGGAI in Haggai 1:3-8
+            </p>
+            <p>
+              "Then came the word of the Lord by Haggai the prophet, saying, Is it
+              time for you, O ye, to dwell in your ceiled houses, and this house
+              lie waste? Now therefore thus saith the Lord of hosts; Consider your
+              ways. Ye have sown much, and bring in little; ye eat, but ye have
+              not enough; ye drink, but ye are not filled with drink; ye clothe
+              you, but there is none warm; and he that earneth wages earneth wages
+              to put it into a bag with holes. Thus saith the Lord of hosts;
+              Consider your ways. Go up to the mountain, and bring wood, and build
+              the house; and I will take pleasure in it, and I will be glorified,
+              saith the Lord."
+            </p>
+            <p>
+              and according to 1 Corinthians 6:19, our bodies are God's temple.
+            </p>
+            <p>
+              "What? know ye not that your body is the temple of the Holy Ghost
+              which is in you, which ye have of God, and ye are not your own?"
+            </p>
+            <p>
+              As a result, we created Haggai to assist in fulfilling the Lord's
+              instruction to build, as the best way to develop the Temple would be
+              through the Lord's word (2 Timothy 2:15)
+            </p>
+            <p>
+              "Study to shew thyself approved unto God, a workman that needeth not
+              to be ashamed, rightly dividing the word of truth."
+            </p>
+            <p class="font-bold text-xs sm:text-base">
+              OUR MISSION IS TO ASSIST IN THE BUILDING OF THE TEMPLE, AND WE DREAM OF A DAY WHEN ALL MEN WILL BE COMPLETELY BUILT ON CHRIST.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+  </body>
+</html>
