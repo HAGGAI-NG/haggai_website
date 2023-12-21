@@ -16,6 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
       rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -30,6 +33,17 @@
               Poppins: ["Poppins", "san serif"],
               Volkhov: ["Volkhov", "serif"],
               Proxima: ["Proxima Nova", "san serif"]
+            },
+            backgroundImage: {
+              "beloved-mobile-image":
+                "linear-gradient(rgba(11, 50, 92, 0.4), rgba(11, 50, 92, 0.4)), url('./src/images/beloved-image.png')",
+              "beloved-image": "url('./src/images/beloved-image.png')",
+              "ok-image": "url('./src/images/ok-bg-image.png')",
+              footer:
+                "linear-gradient(113.34deg, #211C3E 2.98%, #070814 98.39%)"
+            },
+            boxShadow: {
+              custom: "0px 20px 20px 0px #efefef"
             }
           }
         }
@@ -37,8 +51,7 @@
     </script>
   </head>
   <body class="relative">
-    <nav
-      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
+    <nav class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
       <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
         <a href="#" class="flex items-center gap-2 rtl:space-x-reverse">
           <img
@@ -374,27 +387,25 @@
             class="w-full"
             alt="feature picture" />
         </div>
-        <div
-          class="w-full md:w-1/2 flex flex-col gap-3">
+        <div class="w-full md:w-1/2 flex flex-col gap-3">
           <h2
             class="text-[#14183E] text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
             Why HAGGAI?
           </h2>
-          <div class="text-[#545454] text-xs sm:text-base space-y-2 font-Poppins">
+          <div
+            class="text-[#545454] text-xs sm:text-base space-y-2 font-Poppins">
+            <p>As the Lord instructed the prophet HAGGAI in Haggai 1:3-8</p>
             <p>
-              As the Lord instructed the prophet HAGGAI in Haggai 1:3-8
-            </p>
-            <p>
-              "Then came the word of the Lord by Haggai the prophet, saying, Is it
-              time for you, O ye, to dwell in your ceiled houses, and this house
-              lie waste? Now therefore thus saith the Lord of hosts; Consider your
-              ways. Ye have sown much, and bring in little; ye eat, but ye have
-              not enough; ye drink, but ye are not filled with drink; ye clothe
-              you, but there is none warm; and he that earneth wages earneth wages
-              to put it into a bag with holes. Thus saith the Lord of hosts;
-              Consider your ways. Go up to the mountain, and bring wood, and build
-              the house; and I will take pleasure in it, and I will be glorified,
-              saith the Lord."
+              "Then came the word of the Lord by Haggai the prophet, saying, Is
+              it time for you, O ye, to dwell in your ceiled houses, and this
+              house lie waste? Now therefore thus saith the Lord of hosts;
+              Consider your ways. Ye have sown much, and bring in little; ye
+              eat, but ye have not enough; ye drink, but ye are not filled with
+              drink; ye clothe you, but there is none warm; and he that earneth
+              wages earneth wages to put it into a bag with holes. Thus saith
+              the Lord of hosts; Consider your ways. Go up to the mountain, and
+              bring wood, and build the house; and I will take pleasure in it,
+              and I will be glorified, saith the Lord."
             </p>
             <p>
               and according to 1 Corinthians 6:19, our bodies are God's temple.
@@ -405,20 +416,328 @@
             </p>
             <p>
               As a result, we created Haggai to assist in fulfilling the Lord's
-              instruction to build, as the best way to develop the Temple would be
-              through the Lord's word (2 Timothy 2:15)
+              instruction to build, as the best way to develop the Temple would
+              be through the Lord's word (2 Timothy 2:15)
             </p>
             <p>
-              "Study to shew thyself approved unto God, a workman that needeth not
-              to be ashamed, rightly dividing the word of truth."
+              "Study to shew thyself approved unto God, a workman that needeth
+              not to be ashamed, rightly dividing the word of truth."
             </p>
             <p class="font-bold text-xs sm:text-base">
-              OUR MISSION IS TO ASSIST IN THE BUILDING OF THE TEMPLE, AND WE DREAM OF A DAY WHEN ALL MEN WILL BE COMPLETELY BUILT ON CHRIST.
+              OUR MISSION IS TO ASSIST IN THE BUILDING OF THE TEMPLE, AND WE
+              DREAM OF A DAY WHEN ALL MEN WILL BE COMPLETELY BUILT ON CHRIST.
             </p>
           </div>
         </div>
       </div>
     </section>
+    <section
+      class="relative md:min-h-screen py-8 md:py-14 bg-[#F2F6F9] text-white">
+      <img
+        src="./src/images/dearly-beloved-blue-decoration.png"
+        class="absolute bottom-0 right-0 z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/dearly-beloved-white-decoration.png"
+        class="absolute bottom-0 right-0 z-10 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-dearly-beloved-blue-decoration.png"
+        class="absolute bottom-0 right-0 z-0 md:hidden w-full"
+        alt="background design" />
+      <img
+        src="./src/images/mobile-dearly-beloved-white-decoration.png"
+        class="absolute bottom-0 right-0 z-10 md:hidden w-full"
+        alt="background design" />
+      <div
+        class="w-11/12 mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20 text-center md:text-left">
+        <div
+          class="flex flex-col-reverse md:flex-row justify-between border-2 border-[#0B325C] overflow-hidden w-full bg-beloved-mobile-image md:bg-beloved-image bg-left md:bg-center bg-cover bg-no-repeat rounded-[20px]">
+          <div class="w-full md:w-1/2 md:mx-8">
+            <img
+              src="./src/images/group-beloved.png"
+              class="h-full hidden md:block"
+              alt="" />
+            <img
+              src="./src/images/mobile-group-beloved.png"
+              alt=""
+              class="w-full md:hidden" />
+          </div>
+          <div
+            class="w-11/12 mx-auto md:w-1/2 md:bg-[#0b325c] md:bg-none rounded-[20px] md:px-6 lg:px-10 py-5 flex flex-col gap-2 md:gap-4 lg:gap-6 justify-center md:m-6 md:ml-0">
+            <h2
+              class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov text-white">
+              Dearly Beloved,
+            </h2>
+            <div class="font-Poppins space-y-1">
+              <p class="text-xs sm:text-base">
+                Tis time to acquire the application, for this system is crafted
+                for thy ease.
+              </p>
+              <p class="text-xs sm:text-base">
+                We dub it "CONVINCE MAXIMUM," a system fashioned without
+                disturbances or annoying advertisements.
+              </p>
+              <p class="text-xs sm:text-base">Shall we proceed?</p>
+            </div>
+            <button
+              class="w-[200px] mx-auto md:mx-0 mt-2 md:mt-4 font-bold text-black rounded-[10px] text-xs sm:text-base bg-white text-center py-3 px-1 font-Poppins">
+              Download HAGGAI
+            </button>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./src/images/beloved-star-up.png"
+        class="absolute hidden md:block -bottom-4 left-0 h-[60px] md:h-[100px]"
+        alt="background design" />
+    </section>
+    <section
+      class="relative md:min-h-screen overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative">
+      <img
+        src="./src/images/beloved-star-down.png"
+        class="absolute hidden md:block -top-4 left-0 h-[60px] md:h-[90px]"
+        alt="background design" />
+      <img
+        src="./src/images/ok-blue-decore.png"
+        class="absolute -top-0.5 -right-[1px] z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/ok-white-decord.png"
+        class="absolute -top-0.5 -right-[1px] z-10 hidden md:block"
+        alt="background design" />
+      <img
+        src="./src/images/ok-mobile-blue-decore.png"
+        class="absolute top-0 right-0 z-0 md:hidden w-full"
+        alt="background design" />
+      <img
+        src="./src/images/ok-mobile-white-decore.png"
+        class="absolute top-0 right-0 z-10 md:hidden w-full"
+        alt="background design" />
+      <div
+        class="w-11/12 mx-auto flex flex-col items-center gap-4 relative z-20 text-center bg-ok-image bg-center bg-cover bg-no-repeat rounded-[20px] border-2 border-[#0B325C] overflow-hidden">
+        <div
+          class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-8">
+          <h2
+            class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov">
+            Okay shall we ?
+          </h2>
+          <p class="text-xs sm:text-base font-medium mt-2 md:mt-4">
+            Please choose one of the platforms below to see what we have to
+            offer you!
+          </p>
+          <div class="flex w-fit mx-auto gap-6 mt-2 md:mt-4">
+            <a href="#" class="rounded-full w-[120px] sm:w-fit">
+              <img
+                src="./src/images/app-store-button.png"
+                alt="app store button" />
+            </a>
+            <a href="#" class="rounded-full w-[120px] sm:w-fit">
+              <img
+                src="./src/images/play-store-button.png"
+                alt="play store button" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full">
+          <img
+            src="./src/images/Group-593.png"
+            alt="background Image"
+            class="hidden md:block" />
+          <img
+            src="./src/images/Group-593-mobile.png"
+            alt="background Image"
+            class="w-full md:hidden" />
+        </div>
+      </div>
+    </section>
+    <section
+      class="relative overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative homeSlide">
+      <div class="w-11/12 mx-auto">
+        <p
+          class="text-[#3F3F3F] text-sm sm:text-base md:text-base lg:text-lg font-semibold font-Poppins mb-2 md:mb-4">
+          Testimonials
+        </p>
+        <div class="w-full flex flex-col md:flex-row gap-6">
+          <div class="w-full md:w-1/2">
+            <h2
+              class="text-[#14183E] leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] font-bold font-Volkhov">
+              What people say about Us.
+            </h2>
+          </div>
+          <div
+            class="w-full md:w-1/2 flex flex-col md:flex-row md:items-center md:justify-between md:relative gap-8 pb-6 md:pb-0">
+            <!-- Slider main container -->
+            <div class="swiper shadow-custom">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div
+                  class="swiper-slide rounded-[20px] p-4 md:p-8 space-y-6 md:space-y-8">
+                  <p class="text-xs sm:text-base font-medium text-[#545454]">
+                    “On the Windows talking painted pasture yet its express
+                    parties use. Sure last upon he same as knew next. Of
+                    believed or diverted no.”
+                  </p>
+                  <div>
+                    <p
+                      class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
+                      Mike Taylor
+                    </p>
+                    <p class="text-xs sm:text-base font-medium text-[#545454]">
+                      Lahore, Pakistan
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide rounded-[20px] p-4 md:p-8 space-y-6 md:space-y-8">
+                  <p class="text-xs sm:text-base font-medium text-[#545454]">
+                    “On the Windows talking painted pasture yet its express
+                    parties use. Sure last upon he same as knew next. Of
+                    believed or diverted no.”
+                  </p>
+                  <div>
+                    <p
+                      class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
+                      Mike Taylor
+                    </p>
+                    <p class="text-xs sm:text-base font-medium text-[#545454]">
+                      Lahore, Pakistan
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide rounded-[20px] p-4 md:p-8 space-y-6 md:space-y-8">
+                  <p class="text-xs sm:text-base font-medium text-[#545454]">
+                    “On the Windows talking painted pasture yet its express
+                    parties use. Sure last upon he same as knew next. Of
+                    believed or diverted no.”
+                  </p>
+                  <div>
+                    <p
+                      class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
+                      Mike Taylor
+                    </p>
+                    <p class="text-xs sm:text-base font-medium text-[#545454]">
+                      Lahore, Pakistan
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-6 hidden md:block h-full">
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev w-4 h-4 group">
+                <svg
+                  width="16"
+                  height="10"
+                  viewBox="0 0 16 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 8.5L8 1.5L15 8.5"
+                    class="stroke-[#3E2E4D] group-hover:stroke-[#BCB7C2]"
+                    stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="swiper-button-next w-4 h-4 group">
+                <svg
+                  width="16"
+                  height="10"
+                  viewBox="0 0 16 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1L8 8L15 1"
+                    class="stroke-[#3E2E4D] group-hover:stroke-[#BCB7C2]"
+                    stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:-mt-8 h-4 flex justify-end md:justify-start md:ml-1">
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
+      <div class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        <div class="space-y-4 md:max-w-[450px]">
+          <div class="w-fit mx-auto md:ml-0">
+            <a href="#" class="flex items-center gap-2 rtl:space-x-reverse">
+              <img
+                src="./src/images/dove_logo.png"
+                class="h-[33px] md:h-[38px]"
+                alt="Haggai Logo" />
+              <p
+                class="whitespace-nowrap dark:text-white font-Volkhov font-bold text-base md:text-[16px] md:text-[24px] items-center uppercase mt-0.5">
+                HAGGAI
+              </p>
+            </a>
+          </div>
+          <p class="text-xs md:text-base font-Poppins text-white font-medium">
+            Your one-stop location for devotions and additional materials
+            related to your Christian journey.
+          </p>
+        </div>
+        <div class="text-white space-y-4">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">About</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+            <a href="#">Features</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+            <a href="#">Terms Of Use</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="text-white space-y-4">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
+          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+            <a href="#">FAQ</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+            <a href="#">Contacts</a>
+          </p>
+        </div>
+        <div class="text-white space-y-4 text-center">
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="#">
+              <img
+                src="./src/images/Instagram.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="./src/images/WhatsApp.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="./src/images/X.png"
+                alt="Instagram icon"
+                class="h-[40px] w-[40px] bg-black p-2 rounded-full" />
+            </a>
+          </div>
+          <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="#"><img src="./src/images/Google Play.png" alt="" /></a>
+            <a href="#"><img src="./src/images/Play Store.png" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./src/scripts/script.js"></script>
   </body>
 </html>
