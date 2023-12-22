@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../src/images/dove_logo.png" />
+    <title>Contact | Haggai</title>
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-blue": "#3ADDFF",
+              "custom-red": "#FF0000",
+              "logo-red": "#D10000"
+            },
+            fontFamily: {
+              Poppins: ["Poppins", "san serif"],
+              Volkhov: ["Volkhov", "serif"],
+              Proxima: ["Proxima Nova", "san serif"]
+            },
+            backgroundImage: {
+              "beloved-mobile-image":
+                "linear-gradient(rgba(11, 50, 92, 0.4), rgba(11, 50, 92, 0.4)), url('../src/images/beloved-image.png')",
+              "beloved-image": "url('../src/images/beloved-image.png')",
+              "ok-image": "url('../src/images/ok-bg-image.png')",
+              footer:
+                "linear-gradient(113.34deg, #FFFFFF 2.98%, #F5F6F8 98.39%)"
+            },
+            boxShadow: {
+              custom: "0px 20px 20px 0px #efefef"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="relative">
+    <nav class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
+      <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
+        <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+          <img
+            src="../src/images/dove_logo.png"
+            class="h-[33px] md:h-[38px]"
+            alt="Haggai Logo" />
+          <p
+            class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+            HAGGAI
+          </p>
+        </a>
+        <button
+          data-collapse-toggle="navbar-solid-bg"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#05182e] focus:outline-none dark:text-gray-400 dark:hover:bg-transparent dark:focus:ring-gray-600"
+          aria-controls="navbar-solid-bg"
+          aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+          <ul
+            class="flex flex-col mt-4 rounded-lg bg-[#010c17] md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li>
+              <a
+                href="../"
+                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded md:bg-transparent relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] md:after:bg-white transition-all duration-300"
+                aria-current="page">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="../about/"
+                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="../features/"
+                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="../faq/"
+                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                FAQ
+              </a>
+            </li>
+            <li class="hidden md:block">
+              <a
+                href="#"
+                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-[#0B325C] text-white hover:bg-white hover:text-[#0B325C] transition-all duration-300">
+                Download Haggai
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="relative md:min-h-screen overflow-hidden py-8 pt-24 md:pt-40 md:pb-14 bg-[#FFFFFF] text-white">
+      <img
+        src="../src/images/beloved-star-up.png"
+        class="absolute hidden md:block bottom-10 left-0 h-[60px] md:h-[90px]"
+        alt="background design" />
+      <img
+        src="../src/images/contact-images/contact-top-blue.png"
+        class="absolute top-0 left-0 z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="../src/images/contact-images/contact-top-white.png"
+        class="absolute top-0 left-0 z-10 hidden md:block"
+        alt="background design" />
+      <img
+        src="../src/images/contact-images/Group-600.png"
+        class="absolute top-0 left-0 z-0 md:hidden"
+        alt="background design" />
+      <img
+        src="../src/images/contact-images/contact-blue-bottom.png"
+        class="absolute bottom-0 right-0 z-0 hidden md:block"
+        alt="background design" />
+      <img
+        src="../src/images/contact-images/contact-white-bottom.png"
+        class="absolute bottom-0 right-0 z-10 hidden md:block"
+        alt="background design" />
+      <div
+        class="w-11/12 mx-auto flex flex-col items-center gap-4 relative z-20 text-center bg-ok-image bg-center bg-cover bg-no-repeat rounded-[20px] border-2 border-[#0B325C] overflow-hidden">
+        <div
+          class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-8">
+          <p
+            class="text-xs sm:text-base font-semibold mt-2 md:mt-4 text-[#3F3F3F]">
+            OUR CONTACT
+          </p>
+          <h2
+            class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+            Hi, I need to reach you.
+          </h2>
+          <div
+            class="flex flex-col md:flex-row md:flex-wrap w-full items-center justify-center mx-auto gap-4 lg:gap-6 mt-2 md:mt-4 whitespace-nowrap">
+            <a href="https://twitter.com/Haggai_NG" class="group">
+              <div
+                class="bg-black flex justify-center items-center gap-3 text-white rounded-[20px] px-3 py-2 h-[60px]">
+                <img
+                  src="../src/images/X.png"
+                  alt="x icon"
+                  class="h-[36px] w-[36px] bg-black p-2 rounded-full" />
+                <p class="">haggai_ng</p>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/haggai_nig/" class="group">
+              <div
+                class="bg-black flex justify-center items-center gap-3 text-white rounded-[20px] px-3 py-2 h-[60px]">
+                <img
+                  src="../src/images/Instagram.png"
+                  alt="Instagram icon"
+                  class="h-[36px] w-[36px]" />
+                <p class="">haggai_nig</p>
+              </div>
+            </a>
+            <a href="#" class="group">
+              <div
+                class="bg-black flex justify-center items-center gap-3 text-white rounded-[20px] px-3 py-2 h-[60px]">
+                <img
+                  src="../src/images/WhatsApp.png"
+                  alt="WhatsApp icon"
+                  class="h-[36px] w-[36px]" />
+                <p class="">+234 814 748 6278</p>
+              </div>
+            </a>
+            <a href="mailto:haggai2021@gmail.com" class="group">
+              <div
+                class="bg-black flex justify-center items-center gap-3 text-white rounded-[20px] px-3 py-2 h-[60px]">
+                <img
+                  src="../src/images/Gmail.png"
+                  alt="Gmail icon"
+                  class="h-[30px] w-[30px]" />
+                <p class="">haggai2021@gmail.com</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="w-full">
+          <img
+            src="../src/images/Group-593.png"
+            alt="background Image"
+            class="hidden md:block" />
+          <img
+            src="../src/images/Group-593-mobile.png"
+            alt="background Image"
+            class="w-full md:hidden" />
+        </div>
+      </div>
+    </section>
+    <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
+      <div
+        class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        <div class="space-y-4 md:max-w-[450px]">
+          <div class="w-fit mx-auto md:ml-0">
+            <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+              <img
+                src="../src/images/dove_logo.png"
+                class="h-[33px] md:h-[38px]"
+                alt="Haggai Logo" />
+              <p
+                class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base md:text-[16px] md:text-[24px] items-center uppercase mt-0.5">
+                HAGGAI
+              </p>
+            </a>
+          </div>
+          <p
+            class="text-xs md:text-base font-Poppins text-[#0B325C] font-medium">
+            Your one-stop location for devotions and additional materials
+            related to your Christian journey.
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../about/">About</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../features/">Features</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Terms Of Use</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../faq/">FAQ</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="./">Contacts</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-center">
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="https://www.instagram.com/haggai_nig/">
+              <img
+                src="../src/images/Instagram.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="../src/images/WhatsApp.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="../src/images/X.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px] bg-black p-2 rounded-full" />
+            </a>
+          </div>
+          <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="#">
+              <img src="../src/images/Google-Play-white.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="../src/images/Play-Store-white.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/scripts/script.js"></script>
+  </body>
+</html>

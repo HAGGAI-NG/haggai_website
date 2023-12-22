@@ -11,7 +11,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap"
       rel="stylesheet" />
-    <link href="/src/styles/output.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
       rel="stylesheet" />
@@ -53,7 +52,7 @@
   <body class="relative">
     <nav class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
       <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
-        <a href="#" class="flex items-center gap-2 rtl:space-x-reverse">
+        <a href="./" class="flex items-center gap-2 rtl:space-x-reverse">
           <img
             src="./src/images/dove_logo.png"
             class="h-[33px] md:h-[38px]"
@@ -66,7 +65,7 @@
         <button
           data-collapse-toggle="navbar-solid-bg"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#05182e] focus:outline-none dark:text-gray-400 dark:hover:bg-transparent dark:focus:ring-gray-600"
           aria-controls="navbar-solid-bg"
           aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -86,10 +85,10 @@
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
           <ul
-            class="flex flex-col mt-4 rounded-lg bg-gray-50 md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            class="flex flex-col mt-4 rounded-lg bg-[#010c17] md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
             <li>
               <a
-                href="#"
+                href="./"
                 class="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-white transition-all duration-300"
                 aria-current="page">
                 Home
@@ -97,29 +96,29 @@
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                href="./about/"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
                 About
               </a>
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                href="./features/"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
                 Features
               </a>
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
+                href="./faq/"
+                class="block py-2 px-3 md:p-0 text-white rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-white transition-all duration-300">
                 FAQ
               </a>
             </li>
-            <li>
+            <li class="hidden md:block">
               <a
                 href="#"
-                class="block md:hidden py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-gray-100">
+                class=" py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-[#05182e] hover:text-white transition-all duration-300">
                 Download Haggai
               </a>
             </li>
@@ -130,20 +129,12 @@
     <section
       class="bg-gradient-to-r from-[#05182F] to-[#000913] pt-20 md:py-14 min-h-screen w-full relative overflow-hidden border-box flex justify-center">
       <img
-        src="./src/images/Decore.png"
-        class="hidden md:block absolute -right-1 -top-1 w-fit h-[91%] z-10"
+        src="./src/images/hero-bg.png"
+        class="hidden md:block absolute right-0 top-0 w-fit h-[91%] z-10"
         alt="decoration" />
       <img
-        src="./src/images/Decore-red.png"
-        class="hidden md:block absolute right-0 top-0 w-fit h-[90%] z-0"
-        alt="decoration" />
-      <img
-        src="./src/images/mobile-Decore.png"
-        class="block md:hidden absolute -right-[1px] -top-[1px] w-fit h-[50%] z-10"
-        alt="decoration" />
-      <img
-        src="./src/images/mobile-Decore-red.png"
-        class="block md:hidden absolute right-0 top-0 w-fit h-[50%] z-0"
+        src="./src/images/hero-bg-mobile.png"
+        class="block md:hidden absolute right-0 top-0 w-fit h-[50%] z-10"
         alt="decoration" />
       <div
         class="w-11/12 relative mx-auto min-h-screen flex flex-col md:flex-row gap-6 md:justify-between items-center relative z-30">
@@ -253,7 +244,7 @@
             Our Features
           </p>
           <h2
-            class="text-[#14183E] text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            class="text-[#14183E] leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] font-bold font-Volkhov">
             What Does it do?
           </h2>
           <div class="flex flex-col gap-3 md:gap-6">
@@ -328,7 +319,7 @@
           </div>
           <p class="w-fit mx-auto md:ml-0 mt-2 text-center md:text-left">
             <a
-              href="#"
+              href="./features/"
               class="w-fit text-logo-red text-base md:text-base lg:text-lg font-semibold">
               View all features
             </a>
@@ -389,7 +380,7 @@
         </div>
         <div class="w-full md:w-1/2 flex flex-col gap-3">
           <h2
-            class="text-[#14183E] text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
+            class="text-[#14183E] leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] font-bold font-Volkhov">
             Why HAGGAI?
           </h2>
           <div
@@ -520,7 +511,7 @@
           class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-8">
           <h2
             class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov">
-            Okay shall we ?
+            Okay shall we?
           </h2>
           <p class="text-xs sm:text-base font-medium mt-2 md:mt-4">
             Please choose one of the platforms below to see what we have to
@@ -667,7 +658,7 @@
       <div class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
         <div class="space-y-4 md:max-w-[450px]">
           <div class="w-fit mx-auto md:ml-0">
-            <a href="#" class="flex items-center gap-2 rtl:space-x-reverse">
+            <a href="./" class="flex items-center gap-2 rtl:space-x-reverse">
               <img
                 src="./src/images/dove_logo.png"
                 class="h-[33px] md:h-[38px]"
@@ -686,10 +677,10 @@
         <div class="text-white space-y-4">
           <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
           <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
-            <a href="#">About</a>
+            <a href="./about/">About</a>
           </p>
           <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
-            <a href="#">Features</a>
+            <a href="./features/">Features</a>
           </p>
           <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
             <a href="#">Terms Of Use</a>
@@ -701,10 +692,10 @@
         <div class="text-white space-y-4">
           <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
           <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
-            <a href="#">FAQ</a>
+            <a href="./faq/">FAQ</a>
           </p>
           <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
-            <a href="#">Contacts</a>
+            <a href="./contact/">Contacts</a>
           </p>
         </div>
         <div class="text-white space-y-4 text-center">
@@ -725,7 +716,7 @@
               <img
                 src="./src/images/X.png"
                 alt="Instagram icon"
-                class="h-[40px] w-[40px] bg-black p-2 rounded-full" />
+                class="h-[36px] w-[36px] bg-black p-2 rounded-full" />
             </a>
           </div>
           <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
