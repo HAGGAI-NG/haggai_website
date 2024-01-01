@@ -19,6 +19,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -50,43 +53,59 @@
     </script>
   </head>
   <body class="relative">
-    <nav class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
-      <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
-        <a href="./" class="flex items-center gap-2 rtl:space-x-reverse">
-          <img
-            src="./src/images/dove_logo.png"
-            class="h-[33px] md:h-[38px]"
-            alt="Haggai Logo" />
-          <p
-            class="whitespace-nowrap dark:text-white font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
-            HAGGAI
-          </p>
-        </a>
+    <nav
+      id="homeNav"
+      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto py-6 flex items-center justify-between flex-wrap w-full z-50 top-0"
+      x-data="{ isOpen: false }"
+      @keydown.escape="isOpen = false">
+      <div
+        class="w-11/12 mx-auto flex flex-row items-center justify-between flex-wrap">
+        <!--Logo etc-->
+        <div class="w-fit flex items-center text-white">
+          <a href="./" class="flex items-center gap-2 rtl:space-x-reverse">
+            <img
+              src="./src/images/dove_logo.png"
+              class="h-[33px] md:h-[38px]"
+              alt="Haggai Logo" />
+            <p
+              class="whitespace-nowrap dark:text-white font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+              HAGGAI
+            </p>
+          </a>
+        </div>
+
+        <!--Toggle button (hidden on large screens)-->
         <button
-          data-collapse-toggle="navbar-solid-bg"
+          @click="isOpen = !isOpen"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#05182e] focus:outline-none dark:text-gray-400 dark:hover:bg-transparent dark:focus:ring-gray-600"
-          aria-controls="navbar-solid-bg"
-          aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
+          class="block md:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+          :class="{ 'transition transform-180': isOpen }">
           <svg
-            class="w-5 h-5"
-            aria-hidden="true"
+            class="h-6 w-6 fill-[#9ca3af]"
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14">
+            viewBox="0 0 24 24">
             <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
+              x-show="isOpen"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+            <path
+              x-show="!isOpen"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+
+        <!--Menu-->
+        <div
+          class="w-full md:w-fit md:flex md:items-center md:w-auto"
+          :class="{ 'block': isOpen, 'hidden': !isOpen }"
+          @click.away="isOpen = false"
+          x-show.transition="true">
           <ul
-            class="flex flex-col mt-4 rounded-lg bg-[#010c17] md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
-            <li>
+            id="homeNavList"
+            class="flex flex-col mt-2 rounded-lg bg-gradient-to-r from-[#05182F] to-[#000913] md:bg-none md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li class="">
               <a
                 href="./"
                 class="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-white transition-all duration-300"
@@ -118,7 +137,7 @@
             <li class="hidden md:block">
               <a
                 href="#"
-                class=" py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-[#05182e] hover:text-white transition-all duration-300">
+                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-[#05182e] hover:text-white transition-all duration-300">
                 Download Haggai
               </a>
             </li>
@@ -127,33 +146,35 @@
       </div>
     </nav>
     <section
-      class="bg-gradient-to-r from-[#05182F] to-[#000913] pt-20 md:py-14 min-h-screen w-full relative overflow-hidden border-box flex justify-center">
+      class="bg-gradient-to-r from-[#05182F] to-[#000913] pt-20 pb-8 md:py-14 w-full relative overflow-hidden border-box flex justify-center">
       <img
         src="./src/images/hero-bg.png"
-        class="hidden md:block absolute right-0 top-0 w-fit h-[91%] z-10"
+        class="hidden md:block absolute right-0 top-0 w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px] z-0"
         alt="decoration" />
       <img
         src="./src/images/hero-bg-mobile.png"
-        class="block md:hidden absolute right-0 top-0 w-fit h-[50%] z-10"
+        class="block md:hidden absolute right-0 top-0 w-fit h-[50%] z-0"
         alt="decoration" />
       <div
-        class="w-11/12 relative mx-auto min-h-screen flex flex-col md:flex-row gap-6 md:justify-between items-center relative z-30">
+        class="w-11/12 2xl:w-[1400px] md:mt-14 relative mx-auto flex flex-col md:flex-row gap-6 md:gap-2 md:justify-between items-center relative z-30">
         <div
-          class="relative w-[300px] sm:w-[400px] text-center md:text-left flex flex-col items-center md:items-start md:w-[800px] md:w-[840px] gap-3.5 md:gap-5 border-box">
+          class="relative w-[320px] sm:w-[450px] md:w-[650px] 2xl:w-1/2 text-center md:text-left flex flex-col items-center md:items-start gap-3.5 md:gap-4 border-box">
           <h1
             class="text-logo-red md:text-custom-red text-xs sm:text-sm md:text-base lg:text-lg font-Poppins font-bold uppercase">
             Hello and welcome to HAGGAI!!
           </h1>
           <div class="relative">
             <h2
-              class="text-white leading-[64px] text-[50px] md:text-[64px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov relative z-10 tracking-tighter">
+              class="text-white leading-[64px] text-[50px] md:text-[64px] md:leading-[74px] lg:text-[84px] lg:leading-[94px] font-bold font-Volkhov relative z-10">
               Welcome to
-              <br class="md:hidden" />
-              the future of devotions
+              <br class="" />
+              the future of
+              <br class="" />
+              devotions
             </h2>
             <img
               src="./src/images/brush_Decore.png"
-              class="absolute w-[380px] top-[80px] -right-6 z-0 hidden md:block"
+              class="absolute w-[380px] sm:top-[84px] md:top-[65px] lg:top-[84px] lg:right-1 z-0 hidden md:block"
               alt="background design" />
             <img
               src="./src/images/mobile-brush-Decore.png"
@@ -178,26 +199,25 @@
             </a>
           </div>
         </div>
-        <div
-          class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-full flex justify-end">
+        <div class="w-full mx-auto md:w-1/2 flex justify-center">
           <img
-            class="w-full md:w-11/12 md:mt-10 md:-mr-6"
+            class="w-full"
             src="./src/images/haggai_bunch.png"
             alt="screen shot from haggai app" />
         </div>
       </div>
       <img
         src="./src/images/star-top.png"
-        class="absolute -bottom-2 md:-bottom-4 left-0 h-[60px] md:h-[100px]"
+        class="absolute -bottom-2 md:-bottom-4 left-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
     </section>
     <section class="relative py-8 md:py-14 bg-black text-white relative">
       <img
         src="./src/images/star-bottom.png"
-        class="absolute top-1 md:top-0 left-0 h-[48.5px] md:h-[80px]"
+        class="absolute top-1 md:top-0 left-0 h-[48.5px] md:h-[80px] 2xl:h-[135px]"
         alt="background design" />
       <div
-        class="w-11/12 mx-auto flex justify-center items-center gap-5 md:gap-16">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex justify-center items-center gap-5 md:gap-16">
         <div class="text-center flex flex-col justify-center items-center">
           <p
             class="text-[30px] md:text-[45px] lg:text-[55px] font-bold font-Volkhov">
@@ -229,7 +249,7 @@
     </section>
     <section class="relative py-8 md:py-14 bg-[#F2F6F9] text-white">
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row items-center gap-6 relative z-20">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-6 relative z-20">
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-start">
           <img
@@ -327,50 +347,33 @@
         </div>
       </div>
       <img
-        src="./src/images/feature-design-blue.png"
-        class="absolute bottom-0 left-0 z-0 hidden md:block"
+        src="./src/images/Group 600.png"
+        class="absolute bottom-0 left-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="./src/images/feature-design-white.png"
-        class="absolute bottom-0 left-0 z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="./src/images/mobile-feature-blue-design.png"
+        src="./src/images/Group 600 Mobile.png"
         class="absolute bottom-0 left-0 z-0 md:hidden w-full"
         alt="background design" />
       <img
-        src="./src/images/mobile-feature-white-design.png"
-        class="absolute bottom-0 left-0 z-10 md:hidden w-full"
-        alt="background design" />
-      <img
         src="./src/images/feature-stars-top.png"
-        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px]"
+        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
     </section>
     <section class="relative py-8 md:py-14 bg-[#FFFFFF] text-white">
       <img
         src="./src/images/feature-stars-bottom.png"
-        class="hidden md:block absolute top-0 right-0 h-[60px] md:h-[100px]"
+        class="hidden md:block absolute top-0 right-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
       <img
-        src="./src/images/why-blue-deco.png"
-        class="absolute top-0 left-0 z-0 hidden md:block"
+        src="./src/images/Group 595.png"
+        class="absolute top-0 left-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="./src/images/why-white-deco.png"
-        class="absolute top-0 left-0 z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="./src/images/mobile-why-blue.png"
+        src="./src/images/Group 600 Why Mobile.png"
         class="absolute top-0 left-0 z-0 md:hidden w-full"
         alt="background design" />
-      <img
-        src="./src/images/mobile-why-white.png"
-        class="absolute top-0 left-0 z-10 md:hidden w-full"
-        alt="background design" />
-
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-end">
           <img
@@ -422,26 +425,17 @@
         </div>
       </div>
     </section>
-    <section
-      class="relative md:min-h-screen py-8 md:py-14 bg-[#F2F6F9] text-white">
+    <section class="relative md: py-8 md:py-14 bg-[#F2F6F9] text-white">
       <img
-        src="./src/images/dearly-beloved-blue-decoration.png"
-        class="absolute bottom-0 right-0 z-0 hidden md:block"
+        src="./src/images/dearly-beloved-decoration.png"
+        class="absolute bottom-0 right-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="./src/images/dearly-beloved-white-decoration.png"
-        class="absolute bottom-0 right-0 z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="./src/images/mobile-dearly-beloved-blue-decoration.png"
+        src="./src/images/mobile-dearly-beloved-decoration.png"
         class="absolute bottom-0 right-0 z-0 md:hidden w-full"
         alt="background design" />
-      <img
-        src="./src/images/mobile-dearly-beloved-white-decoration.png"
-        class="absolute bottom-0 right-0 z-10 md:hidden w-full"
-        alt="background design" />
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20 text-center md:text-left">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20 text-center md:text-left">
         <div
           class="flex flex-col-reverse md:flex-row justify-between border-2 border-[#0B325C] overflow-hidden w-full bg-beloved-mobile-image md:bg-beloved-image bg-left md:bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div class="w-full md:w-1/2 md:mx-8">
@@ -457,7 +451,7 @@
           <div
             class="w-11/12 mx-auto md:w-1/2 md:bg-[#0b325c] md:bg-none rounded-[20px] md:px-6 lg:px-10 py-5 flex flex-col gap-2 md:gap-4 lg:gap-6 justify-center md:m-6 md:ml-0">
             <h2
-              class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov text-white">
+              class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[84px] lg:leading-[92px] font-bold font-Volkhov text-white">
               Dearly Beloved,
             </h2>
             <div class="font-Poppins space-y-1">
@@ -480,40 +474,32 @@
       </div>
       <img
         src="./src/images/beloved-star-up.png"
-        class="absolute hidden md:block -bottom-4 left-0 h-[60px] md:h-[100px]"
+        class="absolute hidden md:block -bottom-7 left-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
     </section>
     <section
-      class="relative md:min-h-screen overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative">
+      class="relative md: overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative">
       <img
         src="./src/images/beloved-star-down.png"
-        class="absolute hidden md:block -top-4 left-0 h-[60px] md:h-[90px]"
+        class="absolute hidden md:block -top-7 left-0 h-[60px] md:h-[90px] 2xl:h-[155px]"
         alt="background design" />
       <img
-        src="./src/images/ok-blue-decore.png"
-        class="absolute -top-0.5 -right-[1px] z-0 hidden md:block"
+        src="./src/images/ok-decore.png"
+        class="absolute -top-0.5 -right-[1px] z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="./src/images/ok-white-decord.png"
-        class="absolute -top-0.5 -right-[1px] z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="./src/images/ok-mobile-blue-decore.png"
+        src="./src/images/mobile-ok-decore.png"
         class="absolute top-0 right-0 z-0 md:hidden w-full"
         alt="background design" />
-      <img
-        src="./src/images/ok-mobile-white-decore.png"
-        class="absolute top-0 right-0 z-10 md:hidden w-full"
-        alt="background design" />
       <div
-        class="w-11/12 mx-auto flex flex-col items-center gap-4 relative z-20 text-center bg-ok-image bg-center bg-cover bg-no-repeat rounded-[20px] border-2 border-[#0B325C] overflow-hidden">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col items-center gap-4 relative z-20 text-center bg-ok-image bg-center bg-cover bg-no-repeat rounded-[20px] border-2 border-[#0B325C] overflow-hidden">
         <div
-          class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-8">
+          class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-10">
           <h2
-            class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[80px] lg:leading-[89px] font-bold font-Volkhov">
+            class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[84px] lg:leading-[92px] font-bold font-Volkhov">
             Okay shall we?
           </h2>
-          <p class="text-xs sm:text-base font-medium mt-2 md:mt-4">
+          <p class="text-xs sm:text-base font-medium mt-2 md:mt-6">
             Please choose one of the platforms below to see what we have to
             offer you!
           </p>
@@ -544,7 +530,7 @@
     </section>
     <section
       class="relative overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative homeSlide">
-      <div class="w-11/12 mx-auto">
+      <div class="w-11/12 2xl:w-[1400px] mx-auto">
         <p
           class="text-[#3F3F3F] text-sm sm:text-base md:text-base lg:text-lg font-semibold font-Poppins mb-2 md:mb-4">
           Testimonials
@@ -655,8 +641,9 @@
       </div>
     </section>
     <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
-      <div class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
-        <div class="space-y-4 md:max-w-[450px]">
+      <div
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        <div class="space-y-4 md:max-w-[350px] lg:max-w-[450px]">
           <div class="w-fit mx-auto md:ml-0">
             <a href="./" class="flex items-center gap-2 rtl:space-x-reverse">
               <img
@@ -674,31 +661,31 @@
             related to your Christian journey.
           </p>
         </div>
-        <div class="text-white space-y-4">
+        <div class="text-white space-y-4 text-nowrap">
           <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
           <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="./about/">About</a>
           </p>
-          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="./features/">Features</a>
           </p>
-          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="#">Terms Of Use</a>
           </p>
-          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="#">Privacy Policy</a>
           </p>
         </div>
-        <div class="text-white space-y-4">
+        <div class="text-white space-y-4 text-nowrap">
           <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
-          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="./faq/">FAQ</a>
           </p>
-          <p class="font-Poppins font-medium md:text-lg  text-xs font-Poppins">
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="./contact/">Contacts</a>
           </p>
         </div>
-        <div class="text-white space-y-4 text-center">
+        <div class="text-white space-y-4 text-center text-nowrap">
           <div class="flex gap-4 items-center w-fit mx-auto">
             <a href="#">
               <img

@@ -19,6 +19,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -50,75 +53,91 @@
     </script>
   </head>
   <body class="relative">
-    <nav class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto pt-6 z-50">
-      <div class="flex flex-wrap items-center justify-between mx-auto w-11/12">
-        <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
-          <img
-            src="../src/images/dove_logo.png"
-            class="h-[33px] md:h-[38px]"
-            alt="Haggai Logo" />
-          <p
-            class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
-            HAGGAI
-          </p>
-        </a>
+    <nav
+      id="otherNav"
+      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto py-6 flex items-center justify-between flex-wrap w-full z-50 top-0"
+      x-data="{ isOpen: false }"
+      @keydown.escape="isOpen = false">
+      <div
+        class="w-11/12 mx-auto flex flex-row items-center justify-between flex-wrap">
+        <!--Logo etc-->
+        <div class="w-fit flex items-center text-white">
+          <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+            <img
+              src="../src/images/dove_logo.png"
+              class="h-[33px] md:h-[38px]"
+              alt="Haggai Logo" />
+            <p
+              class="whitespace-nowrap text-[#0B325C] font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+              HAGGAI
+            </p>
+          </a>
+        </div>
+
+        <!--Toggle button (hidden on large screens)-->
         <button
-          data-collapse-toggle="navbar-solid-bg"
+          @click="isOpen = !isOpen"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-[3px] md:after:rounded-[30px]0 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#05182e] focus:outline-none dark:text-gray-400 dark:hover:bg-transparent dark:focus:ring-gray-600"
-          aria-controls="navbar-solid-bg"
-          aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
+          class="block md:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+          :class="{ 'transition transform-180': isOpen }">
           <svg
-            class="w-5 h-5"
-            aria-hidden="true"
+            class="h-6 w-6 fill-[#9ca3af]"
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14">
+            viewBox="0 0 24 24">
             <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
+              x-show="isOpen"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+            <path
+              x-show="!isOpen"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+
+        <!--Menu-->
+        <div
+          class="w-full md:w-fit md:flex md:items-center md:w-auto"
+          :class="{ 'block': isOpen, 'hidden': !isOpen }"
+          @click.away="isOpen = false"
+          x-show.transition="true">
           <ul
-            class="flex flex-col mt-4 rounded-lg bg-[#010c17] md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
-            <li>
+            id="otherNavList"
+            class="flex flex-col mt-2 rounded-lg bg-gradient-to-r from-[#FFFFFF] to-[#F5F6F8] md:bg-none md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li class="">
               <a
                 href="../"
-                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded md:bg-transparent relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] md:after:bg-white transition-all duration-300"
-                aria-current="page">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 Home
               </a>
             </li>
             <li>
               <a
                 href="./"
-                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-[#0B325C] transition-all duration-300"
+                aria-current="page">
                 About
               </a>
             </li>
             <li>
               <a
                 href="../features/"
-                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 Features
               </a>
             </li>
             <li>
               <a
                 href="../faq/"
-                class="block py-2 px-3 md:p-0 text-white md:text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 FAQ
               </a>
             </li>
             <li class="hidden md:block">
               <a
                 href="#"
-                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-[#0B325C] text-white hover:bg-white hover:text-[#0B325C] transition-all duration-300" >
+                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-[#0B325C] hover:bg-[#05182e] text-white transition-all duration-300">
                 Download Haggai
               </a>
             </li>
@@ -126,30 +145,22 @@
         </div>
       </div>
     </nav>
-    <section
-      class="relative md:min-h-screen py-8 pt-24 md:pt-40 md:pb-14 bg-[#FFFFFF]">
+    <section class="relative py-8 pt-24 md:pt-40 md:pb-14 bg-[#FFFFFF]">
       <img
         src="../src/images/about-images/about-star.png"
-        class="absolute hidden md:block top-20 left-0 h-[60px] md:h-[100px]"
+        class="absolute hidden md:block top-20 left-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
       <img
-        src="../src/images/about-images/blue-Decore.png"
-        class="absolute top-0 -right-0 z-0 hidden md:block"
+        src="../src/images/about-images/Decore.png"
+        class="absolute top-0 right-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="../src/images/about-images/white-Decore.png"
-        class="absolute top-0 right-0 z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="../src/images/about-images/mobile-blue-decore.png"
+        src="../src/images/about-images/mobile-Decore.png"
         class="absolute top-0 right-0 z-0 md:hidden w-fit"
         alt="background design" />
-      <img
-        src="../src/images/about-images/mobile-white-Decore.png"
-        class="absolute top-0 right-0 z-10 md:hidden w-fit"
-        alt="background design" />
+
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-end">
           <img
@@ -203,7 +214,7 @@
     </section>
     <section class="relative py-8 md:py-14 bg-[#F2F6F9] text-white">
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row items-center gap-6 relative z-20">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-6 relative z-20">
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-start">
           <img
@@ -211,18 +222,17 @@
             class="w-full"
             alt="feature picture" />
         </div>
-        <div
-          class="w-full md:w-1/2  flex flex-col gap-3">
+        <div class="w-full md:w-1/2 flex flex-col gap-3">
           <div class="text-center md:text-left space-y-3">
             <h2
-            class="text-[#14183E] leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] font-bold font-Volkhov">
-            Rccg Vision and mission
-          </h2>
-          <p class="font-Poppins font-medium text-[#3F3F3F] md:my-4">
-            As received by the General Overseer (G.O.), Pastor E. A. Adeboye,
-            and communicated to the Headquarters leaders, the church vision and
-            mission statement shall remain intact. They are as follows:
-          </p>
+              class="text-[#14183E] leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] font-bold font-Volkhov">
+              Rccg Vision and mission
+            </h2>
+            <p class="font-Poppins font-medium text-[#3F3F3F] md:my-4">
+              As received by the General Overseer (G.O.), Pastor E. A. Adeboye,
+              and communicated to the Headquarters leaders, the church vision
+              and mission statement shall remain intact. They are as follows:
+            </p>
           </div>
           <div class="flex flex-col gap-3 md:gap-6">
             <div
@@ -237,7 +247,8 @@
                 </p>
               </div>
             </div>
-            <div class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
               <div
                 class="flex justify-center items-center w-[55px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#F15A2B] text-white font-Poppins font-bold">
                 <p>2.</p>
@@ -248,7 +259,8 @@
                 </p>
               </div>
             </div>
-            <div class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
               <div
                 class="flex justify-center items-center w-[55px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#006380] text-white font-Poppins font-bold">
                 <p>3.</p>
@@ -259,7 +271,8 @@
                 </p>
               </div>
             </div>
-            <div class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
               <div
                 class="flex justify-center items-center w-[55px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#80007B] text-white font-Poppins font-bold">
                 <p>4.</p>
@@ -270,7 +283,8 @@
                 </p>
               </div>
             </div>
-            <div class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
               <div
                 class="flex justify-center items-center w-[55px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#10E031] text-white font-Poppins font-bold">
                 <p>5.</p>
@@ -284,7 +298,8 @@
                 </p>
               </div>
             </div>
-            <div class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-2 md:gap-4 w-full">
               <div
                 class="flex justify-center items-center w-[55px] h-[48px] mx-auto md:ml-0 rounded-[13px] bg-[#1A0080] text-white font-Poppins font-bold">
                 <p>6.</p>
@@ -300,29 +315,21 @@
         </div>
       </div>
       <img
-        src="../src/images/about-images/rccg-blue.png"
-        class="absolute bottom-0 left-0 z-0 hidden md:block"
+        src="../src/images/about-images/rccg-decored.png"
+        class="absolute bottom-0 left-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
         alt="background design" />
       <img
-        src="../src/images/about-images/rccg-white.png"
-        class="absolute bottom-0 left-0 z-10 hidden md:block"
-        alt="background design" />
-      <img
-        src="../src/images/about-images/rccg-mobile-blue.png"
+        src="../src/images/about-images/rccg-mobile-decore.png"
         class="absolute bottom-0 left-0 z-0 md:hidden w-full"
         alt="background design" />
       <img
-        src="../src/images/about-images/rccg-mobile-white.png"
-        class="absolute bottom-0 left-0 z-10 md:hidden w-full"
-        alt="background design" />
-      <img
         src="../src/images/feature-stars-top.png"
-        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px]"
+        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
         alt="background design" />
     </section>
     <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
       <div
-        class="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
         <div class="space-y-4 md:max-w-[450px]">
           <div class="w-fit mx-auto md:ml-0">
             <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
@@ -342,7 +349,7 @@
             related to your Christian journey.
           </p>
         </div>
-        <div class="text-[#0B325C] space-y-4">
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
           <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
           <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="./">About</a>
@@ -357,7 +364,7 @@
             <a href="#">Privacy Policy</a>
           </p>
         </div>
-        <div class="text-[#0B325C] space-y-4">
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
           <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
           <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
             <a href="../faq/">FAQ</a>
@@ -366,7 +373,7 @@
             <a href="../contact/">Contacts</a>
           </p>
         </div>
-        <div class="text-[#0B325C] space-y-4 text-center">
+        <div class="text-[#0B325C] space-y-4 text-center text-nowrap">
           <div class="flex gap-4 items-center w-fit mx-auto">
             <a href="https://www.instagram.com/haggai_nig/">
               <img
@@ -389,14 +396,18 @@
           </div>
           <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
           <div class="flex gap-4 items-center w-fit mx-auto">
-            <a href="#"><img src="../src/images/Google-Play-white.png" alt="" /></a>
-            <a href="#"><img src="../src/images/Play-Store-white.png" alt="" /></a>
+            <a href="#">
+              <img src="../src/images/Google-Play-white.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="../src/images/Play-Store-white.png" alt="" />
+            </a>
           </div>
         </div>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../src/scripts/script.js"></script>
+    <script src="../src/scripts/otherotherScript.js"></script>
   </body>
 </html>
