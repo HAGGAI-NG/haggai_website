@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../src/images/dove_logo.png" />
-    <title>Contact | Haggai</title>
+    <title>FAQS | Haggai</title>
     <meta name="description" content="" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -110,28 +110,28 @@
             <li class="">
               <a
                 href="../"
-                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 Home
               </a>
             </li>
             <li>
               <a
                 href="../about"
-                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 About
               </a>
             </li>
             <li>
               <a
                 href="../features/"
-                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
                 Features
               </a>
             </li>
             <li>
               <a
                 href="./"
-                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:rounded-[30px] md:after:w-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-[#0B325C] transition-all duration-300"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:-left-1.5 md:after:bg-[#0B325C] transition-all duration-300"
                 aria-current="page">
                 FAQ
               </a>
@@ -164,19 +164,20 @@
       <div
         class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col items-center gap-4 relative z-20 overflow-hidden">
         <div class="font-Poppins text-black">
-          <p
-            class="text-xs sm:text-base text-center font-semibold mt-2 md:mt-4 text-[#3F3F3F]">
+          <h1
+            class="text-xs sm:text-base text-center font-semibold mt-2 md:mt-4 text-[#3F3F3F] tracking-widest">
             OUR FAQ’S
-          </p>
+          </h1>
           <h2
             class="text-center leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
             Hmm, I got a question?
           </h2>
           <div
-            class="w-full rounded-[20px] border border-[#0B325C] p-6 md:p-10 bg-white mt-4 md:mt-8 font-Poppins">
+            class="w-full rounded-[20px] border border-[#0B325C] p-6 md:p-8 2xl:p-10 bg-white mt-4 md:mt-8 font-Poppins">
             <ul class="shadow-box space-y-4 md:space-y-6 2xl:space-y-8">
               <li
-                class="relative mx-auto rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq"
+                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                :class="{ ' !border-[#0B325C] ': selected === 1 }"
                 x-data="{selected:null}">
                 <button
                   type="button"
@@ -189,7 +190,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] py-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 1 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +208,7 @@
                   class="relative overflow-hidden transition-all max-h-0 duration-700"
                   x-ref="container1"
                   x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4 mr-[25px] md:mr-[35px]">
+                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -221,7 +222,8 @@
               </li>
 
               <li
-                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq"
+                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                :class="{ ' !border-[#0B325C] ': selected === 2 }"
                 x-data="{selected:null}">
                 <button
                   type="button"
@@ -234,7 +236,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] py-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 2 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +255,7 @@
                   style=""
                   x-ref="container2"
                   x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4 mr-[25px] md:mr-[35px]">
+                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -263,7 +265,8 @@
               </li>
 
               <li
-                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq"
+                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                :class="{ ' !border-[#0B325C] ': selected === 3 }"
                 x-data="{selected:null}">
                 <button
                   type="button"
@@ -276,7 +279,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] py-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 3 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +298,7 @@
                   style=""
                   x-ref="container3"
                   x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4 mr-[25px] md:mr-[35px]">
+                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -304,7 +307,8 @@
                 </div>
               </li>
               <li
-                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq"
+                class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                :class="{ ' !border-[#0B325C] ': selected === 4 }"
                 x-data="{selected:null}">
                 <button
                   type="button"
@@ -317,7 +321,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] py-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 4 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -336,7 +340,7 @@
                   style=""
                   x-ref="container4"
                   x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4 mr-[25px] md:mr-[35px]">
+                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -446,7 +450,7 @@
                 class="h-[33px] md:h-[38px]"
                 alt="Haggai Logo" />
               <p
-                class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base md:text-[22pxpx] md:text-[24px] items-center uppercase mt-0.5">
+                class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base sm:text-lg md:text-[44px] items-center uppercase mt-0.5">
                 HAGGAI
               </p>
             </a>

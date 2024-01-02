@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../src/images/dove_logo.png" />
+    <title>Features | Haggai</title>
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-blue": "#3ADDFF",
+              "custom-red": "#FF0000",
+              "logo-red": "#D10000"
+            },
+            fontFamily: {
+              Poppins: ["Poppins", "san serif"],
+              Volkhov: ["Volkhov", "serif"],
+              Proxima: ["Proxima Nova", "san serif"]
+            },
+            backgroundImage: {
+              "beloved-mobile-image":
+                "linear-gradient(rgba(11, 50, 92, 0.4), rgba(11, 50, 92, 0.4)), url('../src/images/beloved-image.png')",
+              "beloved-image": "url('../src/images/beloved-image.png')",
+              "ok-image": "url('../src/images/ok-bg-image.png')",
+              footer:
+                "linear-gradient(113.34deg, #FFFFFF 2.98%, #F5F6F8 98.39%)"
+            },
+            boxShadow: {
+              custom: "0px 20px 20px 0px #efefef",
+              faq: "0px 0px 5px 0px #080F340F",
+              button: "0px 0px 3px 0px #080F340F"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="relative">
+    <nav
+      id="otherNav"
+      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto py-6 flex items-center justify-between flex-wrap w-full z-50 top-0"
+      x-data="{ isOpen: false }"
+      @keydown.escape="isOpen = false">
+      <div
+        class="w-11/12 mx-auto flex flex-row items-center justify-between flex-wrap">
+        <!--Logo etc-->
+        <div class="w-fit flex items-center text-white">
+          <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+            <img
+              src="../src/images/dove_logo.png"
+              class="h-[33px] md:h-[38px]"
+              alt="Haggai Logo" />
+            <p
+              class="whitespace-nowrap text-[#0B325C] font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+              HAGGAI
+            </p>
+          </a>
+        </div>
+
+        <!--Toggle button (hidden on large screens)-->
+        <button
+          @click="isOpen = !isOpen"
+          type="button"
+          class="block md:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+          :class="{ 'transition transform-180': isOpen }">
+          <svg
+            class="h-6 w-6 fill-[#9ca3af]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+            <path
+              x-show="isOpen"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+            <path
+              x-show="!isOpen"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+          </svg>
+        </button>
+
+        <!--Menu-->
+        <div
+          class="w-full md:w-fit md:flex md:items-center md:w-auto"
+          :class="{ 'block': isOpen, 'hidden': !isOpen }"
+          @click.away="isOpen = false"
+          x-show.transition="true">
+          <ul
+            id="otherNavList"
+            class="flex flex-col mt-2 rounded-lg bg-gradient-to-r from-[#FFFFFF] to-[#F5F6F8] md:bg-none md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li class="">
+              <a
+                href="../"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:mx-auto md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="../about"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:mx-auto md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="./features/"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:mx-auto md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-[#0B325C] transition-all duration-300"
+                aria-current="page">
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="../faq/"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-4 md:after:-left-1.5 md:after:hover:bg-[#0B325C] transition-all duration-300">
+                FAQ
+              </a>
+            </li>
+            <li class="hidden md:block">
+              <a
+                href="#"
+                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-[#0B325C] hover:bg-[#05182e] text-white transition-all duration-300">
+                Download Haggai
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="relative overflow-hidden py-8 pt-24 md:pt-36 md:pb-14 bg-white md:bg-[#F2F6F9] text-white">
+      <img
+        src="../src/images/feature-stars-top.png"
+        class="hidden md:block absolute bottom-0 right-0 h-[60px] md:h-[100px] 2xl:h-[170px]"
+        alt="background design" />
+      <img
+        src="../src/images/faq-images/faq-top-decore.png"
+        class="absolute top-0 left-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
+        alt="background design" />
+      <img
+        src="../src/images/faq-images/faq-top-mobile-decore.png"
+        class="absolute top-0 right-0 z-0 md:hidden"
+        alt="background design" />
+      <div
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col items-center gap-4 relative z-20 overflow-hidden">
+        <div class="font-Poppins text-black">
+          <h1
+            class="text-xs sm:text-base text-center font-semibold mt-2 md:mt-4 text-[#3F3F3F] tracking-widest">
+            OUR FEATURES
+          </h1>
+          <h2
+            class="text-center leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+            So what does it actually have?
+          </h2>
+          <div
+            x-data="{selected:1}"
+            class="flex justify-between md:gap-4 xl:gap-6 2xl:gap-8">
+            <div
+              class="h-fit w-[380px] 2xl:w-[400px] rounded-[20px] border border-[#0B325C] p-6 md:p-8 bg-white mt-4 md:mt-8 font-Poppins hidden md:block">
+              <ul class="shadow-box space-y-4 md:space-y-6 2xl:space-y-8">
+                <li
+                  class="relative mx-auto rounded-[15px] shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 1 }">
+                  <button
+                    type="button"
+                    class="w-full text-left group p-4"
+                    @click="selected = 1">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Devotions</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ 'stroke-white bg-[#0B325C] ': selected === 1 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 2 }">
+                  <button
+                    type="button"
+                    class="w-full text-left group"
+                    @click="selected = 2">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Videos</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 2 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 3 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 3">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Audios</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 3 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 4 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 4">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Mixlir</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 4 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 5 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 5">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Images</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 5 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 6 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 6">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Sermon Notes</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 6 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 7 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 7">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Bible</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 7 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 8 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 8">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Note</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 8 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 9 }">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected = 9">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Hymn</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C] -rotate-90"
+                          :class="{ ' stroke-white bg-[#0B325C] ': selected === 9 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="w-full rounded-[20px] border border-[#0B325C] p-6 md:p-8 2xl:p-10 bg-white mt-4 md:mt-8 font-Poppins">
+              <!-- For Desktop -->
+              <ul class="shadow-box h-fit hidden md:block">
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 1, ' hidden ': selected !== 1 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Devotions
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 2, ' hidden opacity-0': selected !== 2 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Videos
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 3, ' hidden opacity-0': selected !== 3 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Audios
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 4, ' hidden opacity-0': selected !== 4 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Mixlir
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 5, ' hidden opacity-0': selected !== 5 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Images
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 6, ' hidden opacity-0': selected !== 6 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Sermon Note
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 7, ' hidden opacity-0': selected !== 7 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Bible
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 8, ' hidden opacity-0': selected !== 8 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Note
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] duration-500 ease-out"
+                  :class="{ ' block opacity-100 ': selected === 9, ' hidden opacity-0': selected !== 9 }">
+                  <h2
+                    class="leading-[39px] text-[30px] md:text-[45px] md:leading-[65px] lg:text-[55px] text-[#170F49] font-bold font-Volkhov">
+                    Hymn
+                  </h2>
+
+                  <div class="relative overflow-hidden transition-all h-full">
+                    <p
+                      class="mt-2 md:mt-4  text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- For Mobile -->
+              <ul
+                class="shadow-box space-y-4 md:space-y-6 2xl:space-y-8 md:hidden">
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 1 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left group"
+                    @click="selected !== 1 ? selected = 1 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Devotions</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 1 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 md:h-full duration-700"
+                    x-ref="container1"
+                    x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4 md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg text-[#545454]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 2 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left group"
+                    @click="selected !== 2 ? selected = 2 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Videos</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 2 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container2"
+                    x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 3 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 3 ? selected = 3 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Audios</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 3 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container3"
+                    x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 4 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 4 ? selected = 4 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Mixlir</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 4 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container4"
+                    x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 5 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 5 ? selected = 5 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Images</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 5 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container5"
+                    x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 6 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 6 ? selected = 6 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Sermon Notes</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 6 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container6"
+                    x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 7 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 7 ? selected = 7 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Bible</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 7 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container7"
+                    x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 8 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 8 ? selected = 8 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Note</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 8 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container8"
+                    x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
+                  :class="{ ' !border-[#0B325C] ': selected === 9 }"
+                  x-data="{selected:null}">
+                  <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 9 ? selected = 9 : selected = null">
+                    <div
+                      class="flex items-center justify-between font-medium text-sm md:text-xl text-[#3F3F3F]">
+                      <span>Hymn</span>
+                      <span class="ico-plus">
+                        <svg
+                          class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                          :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 9 }"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container9"
+                    x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''">
+                    <p
+                      class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
+      <div
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        <div class="space-y-4 md:max-w-[450px]">
+          <div class="w-fit mx-auto md:ml-0">
+            <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+              <img
+                src="../src/images/dove_logo.png"
+                class="h-[33px] md:h-[38px]"
+                alt="Haggai Logo" />
+              <p
+                class="whitespace-nowrap dark:text-[#0B325C] font-Volkhov font-bold text-base sm:text-lg md:text-[44px] items-center uppercase mt-0.5">
+                HAGGAI
+              </p>
+            </a>
+          </div>
+          <p
+            class="text-xs md:text-base font-Poppins text-[#0B325C] font-medium">
+            Your one-stop location for devotions and additional materials
+            related to your Christian journey.
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../about/">About</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../features/">Features</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Terms Of Use</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="./">FAQ</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../contact/">Contacts</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-center text-nowrap">
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="https://www.instagram.com/haggai_nig/">
+              <img
+                src="../src/images/Instagram.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="../src/images/WhatsApp.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px]" />
+            </a>
+            <a href="#">
+              <img
+                src="../src/images/X.png"
+                alt="Instagram icon"
+                class="h-[36px] w-[36px] bg-black p-2 rounded-full" />
+            </a>
+          </div>
+          <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="#">
+              <img src="../src/images/Google-Play-white.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="../src/images/Play-Store-white.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/scripts/otherScript.js"></script>
+  </body>
+</html>
