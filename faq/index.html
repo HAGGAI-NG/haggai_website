@@ -159,7 +159,7 @@
         alt="background design" />
       <img
         src="../src/images/faq-images/faq-top-mobile-decore.png"
-        class="absolute top-0 right-0 z-0 md:hidden"
+        class="absolute top-0 right-0 z-0 md:hidden w-[65%]"
         alt="background design" />
       <div
         class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col items-center gap-4 relative z-20 overflow-hidden">
@@ -173,7 +173,7 @@
             Hmm, I got a question?
           </h2>
           <div
-            class="w-full rounded-[20px] border border-[#0B325C] p-6 md:p-8 2xl:p-10 bg-white mt-4 md:mt-8 font-Poppins">
+            class="w-full rounded-[20px] border border-[#0B325C] p-4 py-6 sm:p-6 md:p-8 2xl:p-10 bg-white mt-4 md:mt-8 font-Poppins">
             <ul class="shadow-box space-y-4 md:space-y-6 2xl:space-y-8">
               <li
                 class="relative rounded-[15px] p-2 sm:p-4 xl:p-4 shadow-faq border-2 border-transparent"
@@ -190,7 +190,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 1 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,8 @@
                   class="relative overflow-hidden transition-all max-h-0 duration-700"
                   x-ref="container1"
                   x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                  <p
+                    class="mt-2 md:mt-4 md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -236,7 +237,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 2 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -252,10 +253,10 @@
 
                 <div
                   class="relative overflow-hidden transition-all max-h-0 duration-700"
-                  style=""
                   x-ref="container2"
                   x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                  <p
+                    class="mt-2 md:mt-4 md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -279,7 +280,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 3 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -295,10 +296,10 @@
 
                 <div
                   class="relative overflow-hidden transition-all max-h-0 duration-700"
-                  style=""
                   x-ref="container3"
                   x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                  <p
+                    class="mt-2 md:mt-4 md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -321,7 +322,7 @@
                     </span>
                     <span class="ico-plus">
                       <svg
-                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1  duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
+                        class="w-[25px] md:h-[25px] md:w-[35px] md:h-[35px] p-1 duration-300 ease-out rounded-full shadow-button stroke-[#0B325C]"
                         :class="{ 'rotate-180 stroke-white bg-[#0B325C] ': selected === 4 }"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -337,10 +338,10 @@
 
                 <div
                   class="relative overflow-hidden transition-all max-h-0 duration-700"
-                  style=""
                   x-ref="container4"
                   x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
-                  <p class="mt-2 md:mt-4  md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
+                  <p
+                    class="mt-2 md:mt-4 md:mr-[35px] text-[#545454] text-xs sm:text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
