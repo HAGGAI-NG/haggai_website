@@ -106,11 +106,7 @@
   background-color: #0b325c !important;
 }
 a {
-  -webkit-tap-highlight-color: red !important;
-}
-* {
-  /* Prevent any object from being highlighted upon touch event*/
-  -webkit-tap-highlight-color: red !important;
+  -webkit-tap-highlight-color: transparent;
 }
 @media (min-width: 768px) {
   .swiper-pagination-bullet {
