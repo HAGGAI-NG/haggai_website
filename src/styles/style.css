@@ -108,6 +108,7 @@
 a, a:hover, a:active, a:focus{
   text-decoration: none !important;
   outline: none !important;
+  background-color: transparent;
 }
 @media (min-width: 768px) {
   .swiper-pagination-bullet {
