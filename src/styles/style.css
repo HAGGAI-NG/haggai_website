@@ -105,7 +105,7 @@
 .swiper-pagination-bullet-active {
   background-color: #0b325c !important;
 }
-a, a:hover, a:active{
+a, a:hover, a:active, a:focus{
   text-decoration: none !important;
 }
 @media (min-width: 768px) {
