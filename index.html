@@ -24,6 +24,12 @@
       href="https://db.onlinewebfonts.com/a/u5aVe0qETQuWS3iIZnzL62qYOPE1s2QrPcUAW2jufXxU8fEFsY0sX1bICzrSgANV"
       rel="stylesheet"
       type="text/css" />
+    <link
+      rel="preload"
+      as="font"
+      href="./src/fonts/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf"
+      type="font/otf"
+      crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
@@ -107,8 +113,7 @@
         <div
           class="w-full md:w-fit md:flex md:items-center md:w-auto"
           :class="{ 'block': isOpen, 'hidden': !isOpen }"
-          @click.away="isOpen = false"
-          x-show.transition="true">
+          @click.away="isOpen = false">
           <ul
             id="homeNavList"
             class="flex flex-col mt-2 rounded-lg bg-gradient-to-r from-[#05182F] to-[#000913] md:bg-none md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
