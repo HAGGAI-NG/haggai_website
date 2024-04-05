@@ -46,6 +46,7 @@
               "beloved-mobile-image":
                 "linear-gradient(rgba(11, 50, 92, 0.4), rgba(11, 50, 92, 0.4)), url('./src/images/beloved-image.png')",
               "beloved-image": "url('./src/images/beloved-image.png')",
+              "hero-image": "url('./src/images/Home-Hero-Section.png')",
               "ok-image": "url('./src/images/ok-bg-image.png')",
               footer:
                 "linear-gradient(113.34deg, #211C3E 2.98%, #070814 98.39%)"
@@ -142,7 +143,7 @@
             </li>
             <li class="hidden md:block">
               <a
-                href="#"
+                href="./download/"
                 class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-white hover:bg-[#05182e] hover:text-white transition-all duration-300">
                 Download Haggai
               </a>
@@ -152,7 +153,7 @@
       </div>
     </nav>
     <section
-      class="bg-gradient-to-r from-[#05182F] to-[#000913] pt-20 pb-8 md:py-14 md:pt-24 w-full relative overflow-hidden border-box flex justify-center">
+      class="bg-hero-image bg-cover bg-center pt-20 pb-8 md:py-14 md:pt-24 w-full relative overflow-hidden border-box flex justify-center">
       <img
         src="./src/images/hero-bg.png"
         class="hidden md:block absolute right-0 top-0 w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px] z-0"
@@ -193,29 +194,35 @@
             Christian growth.
           </p>
           <div class="flex justify-center gap-3 sm:gap-6 mt-5 md:mt-0">
-            <a href="#" 
-            class="rounded-[20px] h-[47px] px-2.5 pr-4 w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2" >
-                <svg
-                  class="w-[18px] md:w-[23px]"
-                  viewBox="0 0 256 315"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  preserveAspectRatio="xMidYMid">
-                  <g>
-                    <path
-                      d="M213.803394,167.030943 C214.2452,214.609646 255.542482,230.442639 256,230.644727 C255.650812,231.761357 249.401383,253.208293 234.24263,275.361446 C221.138555,294.513969 207.538253,313.596333 186.113759,313.991545 C165.062051,314.379442 158.292752,301.507828 134.22469,301.507828 C110.163898,301.507828 102.642899,313.596301 82.7151126,314.379442 C62.0350407,315.16201 46.2873831,293.668525 33.0744079,274.586162 C6.07529317,235.552544 -14.5576169,164.286328 13.147166,116.18047 C26.9103111,92.2909053 51.5060917,77.1630356 78.2026125,76.7751096 C98.5099145,76.3877456 117.677594,90.4371851 130.091705,90.4371851 C142.497945,90.4371851 165.790755,73.5415029 190.277627,76.0228474 C200.528668,76.4495055 229.303509,80.1636878 247.780625,107.209389 C246.291825,108.132333 213.44635,127.253405 213.803394,167.030988 M174.239142,50.1987033 C185.218331,36.9088319 192.607958,18.4081019 190.591988,0 C174.766312,0.636050225 155.629514,10.5457909 144.278109,23.8283506 C134.10507,35.5906758 125.195775,54.4170275 127.599657,72.4607932 C145.239231,73.8255433 163.259413,63.4970262 174.239142,50.1987249"></path>
-                  </g>
-                </svg>
-                <div class="font-Poppins text-left">
-                  <p class="text-[8px] sm:text-[10px] -mb-0.5 sm:-mb-1.5">
-                    Download on the
-                  </p>
-                  <p class="font-medium text-base sm:text-xl">App Store</p>
-                </div>
-            </a>
             <a
               href="#"
+              class="rounded-[20px] h-[47px] px-2.5 pr-4 w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2 relative pointer-events-none">
+              <img
+                src="./src/images/coming-soon-banner.png"
+                class="absolute h-full top-0 left-0 rounded-b-xl"
+                alt="coming soon banner" />
+              <svg
+                class="w-[18px] md:w-[23px]"
+                viewBox="0 0 256 315"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                preserveAspectRatio="xMidYMid">
+                <g>
+                  <path
+                    d="M213.803394,167.030943 C214.2452,214.609646 255.542482,230.442639 256,230.644727 C255.650812,231.761357 249.401383,253.208293 234.24263,275.361446 C221.138555,294.513969 207.538253,313.596333 186.113759,313.991545 C165.062051,314.379442 158.292752,301.507828 134.22469,301.507828 C110.163898,301.507828 102.642899,313.596301 82.7151126,314.379442 C62.0350407,315.16201 46.2873831,293.668525 33.0744079,274.586162 C6.07529317,235.552544 -14.5576169,164.286328 13.147166,116.18047 C26.9103111,92.2909053 51.5060917,77.1630356 78.2026125,76.7751096 C98.5099145,76.3877456 117.677594,90.4371851 130.091705,90.4371851 C142.497945,90.4371851 165.790755,73.5415029 190.277627,76.0228474 C200.528668,76.4495055 229.303509,80.1636878 247.780625,107.209389 C246.291825,108.132333 213.44635,127.253405 213.803394,167.030988 M174.239142,50.1987033 C185.218331,36.9088319 192.607958,18.4081019 190.591988,0 C174.766312,0.636050225 155.629514,10.5457909 144.278109,23.8283506 C134.10507,35.5906758 125.195775,54.4170275 127.599657,72.4607932 C145.239231,73.8255433 163.259413,63.4970262 174.239142,50.1987249"></path>
+                </g>
+              </svg>
+              <div class="font-Poppins text-left">
+                <p class="text-[8px] sm:text-[10px] -mb-0.5 sm:-mb-1.5">
+                  Download on the
+                </p>
+                <p class="font-medium text-base sm:text-xl">App Store</p>
+              </div>
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.oti.oh"
+              target="”_blank”"
               class="rounded-[20px] h-[47px] w-fit px-2.5 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2 cursor-pointer">
               <svg
                 id="Layer_1"
@@ -303,7 +310,7 @@
         <div class="w-full mx-auto sm:w-8/12 md:w-1/2 flex justify-center">
           <img
             class="w-full"
-            src="./src/images/haggai_bunch.webp"
+            src="./src/images/haggai_bunch.png"
             alt="screen shot from haggai app" />
         </div>
       </div>
@@ -354,7 +361,7 @@
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-start">
           <img
-            src="./src/images/what-it-does-phone.webp"
+            src="./src/images/what-it-does-phone.png"
             class="w-full"
             alt="feature picture" />
         </div>
@@ -377,10 +384,10 @@
               <div class="w-fit">
                 <p
                   class="text-[#3F3F3F] font-Poppins font-bold text-sm sm:text-base">
-                  Devotions
+                  Devotionals
                 </p>
                 <p class="font-Poppins text-[#545454] text-xs sm:text-base">
-                  We provide a variety of devotions, such as house fellowship,
+                  We provide a variety of devotionals, such as house fellowship,
                   Sunday school for adults and teens, Open Heavens for adults
                   and teens, and more built for your maximum convenience.
                 </p>
@@ -478,7 +485,7 @@
         <div
           class="w-full sm:w-8/12 mx-auto md:ml-0 md:w-1/2 flex text-center justify-center md:items-end">
           <img
-            src="./src/images/why-phone-screen.webp"
+            src="./src/images/why-phone-screen.png"
             class="w-full"
             alt="feature picture" />
         </div>
@@ -541,11 +548,11 @@
           class="flex flex-col-reverse md:flex-row justify-between border-2 border-[#0B325C] overflow-hidden w-full bg-beloved-mobile-image md:bg-beloved-image bg-left md:bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div class="w-full md:w-1/2 md:mx-8">
             <img
-              src="./src/images/group-beloved.webp"
+              src="./src/images/group-beloved.png"
               class="h-full hidden md:block"
               alt="" />
             <img
-              src="./src/images/mobile-group-beloved.webp"
+              src="./src/images/mobile-group-beloved.png"
               alt=""
               class="w-full md:hidden" />
           </div>
@@ -557,16 +564,20 @@
             </h2>
             <div class="font-Poppins space-y-1">
               <p class="text-xs sm:text-base">
-                Tis time to acquire the application, for this system is crafted
-                for thy ease.
+                Join a community where inspiration and growth thrive, all within
+                one app: HAGGAI.
               </p>
               <p class="text-xs sm:text-base">
-                We dub it "CONVINCE MAXIMUM," a system fashioned without
-                disturbances or annoying advertisements.
+                Here, you’ll find the essence of devotionals without any
+                distractions or ads.
               </p>
-              <p class="text-xs sm:text-base">Shall we proceed?</p>
+              <p class="text-xs sm:text-base">
+                Ready to embrace the future with HAGGAI? Find your peaceful
+                corner in our app today.
+              </p>
             </div>
             <button
+              id="scrollToOkayShallWeButton"
               class="w-[200px] mx-auto md:mx-0 mt-2 md:mt-4 font-bold text-black rounded-[10px] text-xs sm:text-base bg-white text-center py-3 px-1 font-Poppins">
               Download HAGGAI
             </button>
@@ -579,6 +590,7 @@
         alt="background design" />
     </section>
     <section
+      id="scrollToOkayShallWe"
       class="relative md: overflow-hidden py-8 md:py-14 bg-[#FFFFFF] text-white relative">
       <img
         src="./src/images/beloved-star-down.png"
@@ -597,18 +609,22 @@
         <div
           class="w-11/12 font-Poppins text-center text-black pt-6 pb-2 md:py-10">
           <h2
-            class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[84px] lg:leading-[92px] font-bold font-Volkhov">
+            class="text-[30px] md:text-[60px] md:leading-[74px] lg:text-[84px] lg:leading-[92px] font-bold font-Volkhov text-white">
             Okay shall we?
           </h2>
-          <p class="text-xs sm:text-base font-medium mt-2 md:mt-6">
+          <p class="text-xs sm:text-base font-medium mt-2 md:mt-6 text-white">
             Please choose one of the platforms below to see what we have to
             offer you!
           </p>
           <div
-            class="flex justify-center sm:w-fit mx-auto gap-3 sm:gap-6 mt-2 md:mt-4">
+            class="flex justify-center sm:w-fit mx-auto gap-3 sm:gap-6 mt-2 md:mt-7">
             <a
               href="#"
-              class="rounded-[20px] h-[47px] px-2.5 pr-4 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2 cursor-pointer">
+              class="rounded-[20px] h-[47px] px-2.5 pr-4 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2 cursor-pointer relative pointer-events-none">
+              <img
+                src="./src/images/coming-soon-banner.png"
+                class="absolute h-full top-0 left-0 rounded-b-xl"
+                alt="coming soon banner" />
               <svg
                 class="w-[18px] md:w-[23px]"
                 viewBox="0 0 256 315"
@@ -629,7 +645,8 @@
               </span>
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.oti.oh"
+              target="”_blank”"
               class="rounded-[20px] h-[47px] px-2.5 w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1.5 md:gap-2 cursor-pointer">
               <svg
                 id="Layer_1"
@@ -716,11 +733,11 @@
         </div>
         <div class="w-full">
           <img
-            src="./src/images/Group-593.webp"
+            src="./src/images/Group-593.png"
             alt="background Image"
             class="hidden md:block" />
           <img
-            src="./src/images/Group-593-mobile.webp"
+            src="./src/images/Group-593-mobile.png"
             alt="background Image"
             class="w-full md:hidden" />
         </div>
@@ -757,10 +774,10 @@
                   <div>
                     <p
                       class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
-                      Mike Taylor
+                      Temitope Oti
                     </p>
                     <p class="text-xs sm:text-base font-medium text-[#545454]">
-                      Lahore, Pakistan
+                      Lagos, Nigeria
                     </p>
                   </div>
                 </div>
@@ -774,10 +791,10 @@
                   <div>
                     <p
                       class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
-                      Mike Taylor
+                      Feyi Amujo
                     </p>
                     <p class="text-xs sm:text-base font-medium text-[#545454]">
-                      Lahore, Pakistan
+                      Ife, Nigeria
                     </p>
                   </div>
                 </div>
@@ -791,10 +808,10 @@
                   <div>
                     <p
                       class="text-base md:text-lg font-Volkhov font-black text-[#545454]">
-                      Mike Taylor
+                      Okoroafo Gozie
                     </p>
                     <p class="text-xs sm:text-base font-medium text-[#545454]">
-                      Lahore, Pakistan
+                      Ibadan, Nigeria
                     </p>
                   </div>
                 </div>
@@ -885,7 +902,7 @@
         </div>
         <div class="text-white space-y-4 text-center text-nowrap">
           <div class="flex gap-4 items-center w-fit mx-auto">
-            <a href="#">
+            <a href="https://www.instagram.com/haggai_nig/" target="_blank">
               <svg
                 class="h-[36px] w-[36px]"
                 viewBox="0 0 49 48"
@@ -930,7 +947,7 @@
                 </defs>
               </svg>
             </a>
-            <a href="#">
+            <a href="https://wa.me/2348147486278" target="_blank">
               <svg
                 class="h-[36px] w-[36px]"
                 viewBox="0 0 49 48"
@@ -945,7 +962,7 @@
                   fill="white" />
               </svg>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/Haggai_NG" target="_blank">
               <svg
                 class="h-[36px] w-[36px] bg-black p-2 rounded-full"
                 viewBox="0 0 49 48"
@@ -962,7 +979,8 @@
           <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
           <div class="flex gap-4 items-center w-fit mx-auto">
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.oti.oh"
+              target="”_blank”"
               class="rounded-[20px] h-fit w-fit px-2 py-1 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1 cursor-pointer text-left">
               <svg
                 id="Layer_1"
@@ -1045,7 +1063,11 @@
             </a>
             <a
               href="#"
-              class="rounded-[20px] h-fit w-[130px] px-2 py-1 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1 cursor-pointer text-left">
+              class="rounded-[20px] h-fit w-[130px] px-2 py-1 sm:w-fit bg-black text-[#efefef] fill-white border flex items-center gap-1 cursor-pointer text-left relative pointer-events-none">
+              <img
+                src="./src/images/coming-soon-banner.png"
+                class="absolute h-full top-0 left-0 rounded-b-xl"
+                alt="coming soon banner" />
               <svg
                 class="w-[14px]"
                 viewBox="0 0 256 315"

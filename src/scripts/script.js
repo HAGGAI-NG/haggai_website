@@ -45,7 +45,6 @@ window.addEventListener("scroll", () => {
 
     if (window.innerWidth < 768) {
       // homeNavList.classList.add(
-        
       // );
       // otherNavList.classList.add("bg-white");
     }
@@ -67,4 +66,16 @@ window.addEventListener("scroll", () => {
       // );
     }
   }
+});
+
+const scrollToOkayShallWeButton = document.getElementById(
+  "scrollToOkayShallWeButton"
+);
+
+scrollToOkayShallWeButton.addEventListener("click", () => {
+  console.log("Here");
+  let target = document.getElementById("scrollToOkayShallWeButton");
+  const yOffset = 200;
+  const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top: y, behavior: "smooth" });
 });

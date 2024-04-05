@@ -120,3 +120,7 @@ a {
     right: 4%;
   } */
 }
+
+body{
+  scroll-behavior: smooth;
+}
