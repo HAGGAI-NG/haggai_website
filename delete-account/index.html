@@ -40,7 +40,8 @@
             colors: {
               "custom-blue": "#3ADDFF",
               "custom-red": "#FF0000",
-              "logo-red": "#D10000"
+              "logo-red": "#D10000",
+              "": "#"
             },
             fontFamily: {
               Poppins: ["Poppins", "san serif"],
@@ -167,7 +168,7 @@
         alt="background design" />
       <div
         class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
-        <div class="w-full flex flex-col gap-3 md:max-w-[750px] mx-auto">
+        <div class="w-full flex flex-col gap-3 md:max-w-[750px] mx-auto border">
           <h2
             class="text-[#14183E] text-[25px] md:text-[40px] lg:text-[50px] font-bold font-Volkhov">
             Delete Your Haggai Account
@@ -181,41 +182,41 @@
           <div
             class="text-[#545454] text-xs sm:text-base space-y-3 font-Poppins">
             <form action="#" method="POST" class="w-full mx-auto mt-8">
-              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div>
+              <div class="grid grid-cols-1 gap-x-8 gap-y-6">
+                <!-- <div>
                   <label
-                    htmlFor="first-name"
-                    class="block text-sm font-medium text-off-black 2xl:text-lg">
-                    First name
+                    for="full-name"
+                    class="block text-sm font-medium  2xl:text-lg">
+                    Full Name
                   </label>
                   <div class="mt-2.5">
                     <input
                       type="text"
-                      name="first-name"
+                      name="full-name"
                       id="first-name"
                       autocomplete="given-name"
                       class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                   </div>
-                </div>
-                <div>
+                </div> -->
+                <div class="sm:col-span-1">
                   <label
-                    htmlFor="last-name"
-                    class="block text-sm font-medium text-off-black 2xl:text-lg">
-                    Last name
+                    for="full-name"
+                    class="block text-sm font-medium 2xl:text-lg">
+                    Full name
                   </label>
                   <div class="mt-2.5">
                     <input
                       type="text"
-                      name="last-name"
-                      id="last-name"
-                      autocomplete="family-name"
+                      name="full-name"
+                      id="full-name"
+                      autocomplete="full-name"
                       class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-1">
                   <label
-                    htmlFor="email"
-                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    for="email"
+                    class="block text-sm font-medium 2xl:text-lg">
                     Email
                   </label>
                   <div class="mt-2.5">
@@ -227,31 +228,31 @@
                       class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-1">
                   <label
-                    htmlFor="company"
-                    class="block text-sm font-medium text-off-black 2xl:text-lg">
-                    Subject
+                    for="password"
+                    class="block text-sm font-medium 2xl:text-lg">
+                    Password
                   </label>
                   <div class="mt-2.5">
                     <input
                       type="text"
-                      name="company"
-                      id="company"
-                      autocomplete="organization"
+                      name="password"
+                      id="password"
+                      autocomplete="password"
                       class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-1">
                   <label
-                    htmlFor="message"
-                    class="block text-sm font-medium text-off-black 2xl:text-lg">
-                    Message
+                    for="reason"
+                    class="block text-sm font-medium 2xl:text-lg">
+                    Reason
                   </label>
                   <div class="mt-2.5">
                     <textarea
-                      name="message"
-                      id="message"
+                      name="reason"
+                      id="reason"
                       rows="{4}"
                       class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                   </div>
