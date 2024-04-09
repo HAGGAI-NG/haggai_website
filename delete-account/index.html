@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../src/images/dove_logo.png" type="image" />
+    <title>Delete Account - Haggai Mobile App</title>
+    <meta
+      name="description"
+      content="Discover the heart of Haggai - Learn about our mission, vision, and the passion driving us to merge technology and Christianity. Explore our story as we embark on a journey of faith and innovation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://db.onlinewebfonts.com/a/u5aVe0qETQuWS3iIZnzL62qYOPE1s2QrPcUAW2jufXxU8fEFsY0sX1bICzrSgANV"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      rel="preload"
+      as="font"
+      href="../src/fonts/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf"
+      type="font/otf" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-blue": "#3ADDFF",
+              "custom-red": "#FF0000",
+              "logo-red": "#D10000"
+            },
+            fontFamily: {
+              Poppins: ["Poppins", "san serif"],
+              Volkhov: ["Volkhov", "serif"],
+              Proxima: ["Proxima Nova", "san serif"]
+            },
+            backgroundImage: {
+              "beloved-mobile-image":
+                "linear-gradient(rgba(11, 50, 92, 0.4), rgba(11, 50, 92, 0.4)), url('../src/images/beloved-image.png')",
+              "beloved-image": "url('../src/images/beloved-image.png')",
+              "ok-image": "url('../src/images/ok-bg-image.png')",
+              footer:
+                "linear-gradient(113.34deg, #FFFFFF 2.98%, #F5F6F8 98.39%)"
+            },
+            boxShadow: {
+              custom: "0px 20px 20px 0px #efefef"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="relative">
+    <nav
+      id="otherNav"
+      class="absolute w-full h-fit top-0 right-0 bottom-0 mx-auto py-6 flex items-center justify-between flex-wrap w-full z-50 top-0"
+      x-data="{ isOpen: false }"
+      @keydown.escape="isOpen = false">
+      <div
+        class="w-11/12 mx-auto flex flex-row items-center justify-between flex-wrap">
+        <!--Logo etc-->
+        <div class="w-fit flex items-center text-white">
+          <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+            <img
+              src="../src/images/dove_logo.png"
+              class="h-[33px] md:h-[38px]"
+              alt="Haggai Logo" />
+            <p
+              class="whitespace-nowrap text-[#0B325C] font-Volkhov font-bold text-base md:text-[20px] lg:text-[24px] items-center uppercase mt-0.5">
+              HAGGAI
+            </p>
+          </a>
+        </div>
+
+        <!--Toggle button (hidden on large screens)-->
+        <button
+          @click="isOpen = !isOpen"
+          type="button"
+          class="block md:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+          :class="{ 'transition transform-180': isOpen }">
+          <svg
+            class="h-6 w-6 fill-[#9ca3af]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+            <path
+              x-show="isOpen"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+            <path
+              x-show="!isOpen"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+          </svg>
+        </button>
+
+        <!--Menu-->
+        <div
+          class="w-full md:w-fit md:flex md:items-center md:w-auto"
+          :class="{ 'block': isOpen, 'hidden': !isOpen }"
+          @click.away="isOpen = false"
+          x-show.transition="true">
+          <ul
+            id="otherNavList"
+            class="flex flex-col mt-2 rounded-lg bg-gradient-to-r from-[#FFFFFF] to-[#F5F6F8] md:bg-none md:space-x-8 lg:space-x-12 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent font-semibold text-lg lg:text-xl md:items-center font-Proxima">
+            <li class="">
+              <a
+                href="../"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="./"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:bg-[#0B325C] transition-all duration-300"
+                aria-current="page">
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="../features/"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:left-0 md:after:mx-auto md:after:hover:bg-[#0B325C] transition-all duration-300">
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="../faq/"
+                class="block py-2 px-3 md:p-0 text-[#0B325C] rounded hover:bg-[#05182e] md:hover:bg-transparent md:border-0 relative md:after:absolute md:after:h-[3px] md:after:w-[52px] md:after:rounded-full md:after:-bottom-2 md:after:right-0 md:after:-left-1.5 md:after:hover:bg-[#0B325C] transition-all duration-300">
+                FAQ
+              </a>
+            </li>
+            <li class="hidden md:block">
+              <a
+                href="../download/"
+                class="py-2 px-3 md:px-6 md:py-3 rounded-full bg-[#0B325C] hover:bg-[#05182e] text-white transition-all duration-300">
+                Download Haggai
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="relative py-8 pt-24 md:pt-40 md:pb-14 bg-[#FFFFFF]">
+      <img
+        src="../src/images/about-images/Decore.png"
+        class="absolute top-0 right-0 z-0 hidden md:block w-[50%] md:w-[400px] xl:w-[600px] 2xl:w-[800px]"
+        alt="background design" />
+      <img
+        src="../src/images/about-images/Decore-mobile.png"
+        class="absolute top-0 right-0 z-0 md:hidden w-[50%]"
+        alt="background design" />
+      <div
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row-reverse items-center gap-6 relative z-20">
+        <div class="w-full flex flex-col gap-3 md:max-w-[750px] mx-auto">
+          <h2
+            class="text-[#14183E] text-[25px] md:text-[40px] lg:text-[50px] font-bold font-Volkhov">
+            Delete Your Haggai Account
+          </h2>
+          <p>
+            Kindly fill out the form below to delete your Haggai Mobile App
+            account. Ensure to you share your experience and suggestions to help
+            us serve the community better. Thank you for being part of the
+            Haggai community!
+          </p>
+          <div
+            class="text-[#545454] text-xs sm:text-base space-y-3 font-Poppins">
+            <form action="#" method="POST" class="w-full mx-auto mt-8">
+              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                  <label
+                    htmlFor="first-name"
+                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    First name
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="text"
+                      name="first-name"
+                      id="first-name"
+                      autocomplete="given-name"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="last-name"
+                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    Last name
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="text"
+                      name="last-name"
+                      id="last-name"
+                      autocomplete="family-name"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    htmlFor="email"
+                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    Email
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autocomplete="email"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    htmlFor="company"
+                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    Subject
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="text"
+                      name="company"
+                      id="company"
+                      autocomplete="organization"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    htmlFor="message"
+                    class="block text-sm font-medium text-off-black 2xl:text-lg">
+                    Message
+                  </label>
+                  <div class="mt-2.5">
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows="{4}"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10 flex justify-end">
+                <button
+                  type="submit"
+                  class="px-12 md:px-14 py-3 rounded-full bg-[#0B325C] hover:bg-[#05182e] text-white transition-all duration-300 text-sm md:text-base pointer-events-none">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="relative overflow-hidden py-8 md:py-14 bg-footer">
+      <div
+        class="w-11/12 2xl:w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+        <div class="space-y-4 md:max-w-[450px]">
+          <div class="w-fit mx-auto md:ml-0">
+            <a href="../" class="flex items-center gap-2 rtl:space-x-reverse">
+              <img
+                src="../src/images/dove_logo.png"
+                class="h-[33px] md:h-[38px]"
+                alt="Haggai Logo" />
+              <p
+                class="whitespace-nowrap text-[#0B325C] font-Volkhov font-bold text-base sm:text-lg md:text-[38px] items-center uppercase mt-0.5">
+                HAGGAI
+              </p>
+            </a>
+          </div>
+          <p
+            class="text-xs md:text-base font-Poppins text-[#0B325C] font-medium">
+            Your one-stop location for devotions and additional materials
+            related to your Christian journey.
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Company</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="./">About</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../features/">Features</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Terms Of Use</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-nowrap">
+          <p class="font-Volkhov font-bold text-base md:text-xl">Need Help?</p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../faq/">FAQ</a>
+          </p>
+          <p class="font-Poppins font-medium md:text-lg text-xs font-Poppins">
+            <a href="../contact/">Contacts</a>
+          </p>
+        </div>
+        <div class="text-[#0B325C] space-y-4 text-center text-nowrap">
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a href="https://www.instagram.com/haggai_nig/" target="_blank">
+              <svg
+                class="h-[36px] w-[36px]"
+                viewBox="0 0 49 48"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  cx="24.5"
+                  cy="24"
+                  r="24"
+                  fill="url(#paint0_radial_2541_175)" />
+                <circle
+                  cx="24.5"
+                  cy="24"
+                  r="24"
+                  fill="url(#paint1_radial_2541_175)" />
+                <path
+                  d="M24.5013 9.59961C20.5905 9.59961 20.0997 9.61671 18.5637 9.68661C17.0306 9.75681 15.9842 9.99951 15.0686 10.3556C14.1215 10.7234 13.3181 11.2154 12.5177 12.0161C11.7167 12.8165 11.2247 13.6199 10.8557 14.5667C10.4987 15.4826 10.2557 16.5293 10.1867 18.0617C10.118 19.5977 10.1 20.0888 10.1 23.9996C10.1 27.9104 10.1174 28.3997 10.187 29.9357C10.2575 31.4687 10.5002 32.5151 10.856 33.4307C11.2241 34.3778 11.7161 35.1812 12.5168 35.9816C13.3169 36.7826 14.1203 37.2758 15.0668 37.6436C15.983 37.9997 17.0297 38.2424 18.5625 38.3126C20.0985 38.3825 20.589 38.3996 24.4995 38.3996C28.4107 38.3996 28.9 38.3825 30.436 38.3126C31.969 38.2424 33.0166 37.9997 33.9328 37.6436C34.8796 37.2758 35.6818 36.7826 36.482 35.9816C37.283 35.1812 37.775 34.3778 38.144 33.431C38.498 32.5151 38.741 31.4684 38.813 29.936C38.882 28.4 38.9 27.9104 38.9 23.9996C38.9 20.0888 38.882 19.598 38.813 18.062C38.741 16.529 38.498 15.4826 38.144 14.567C37.775 13.6199 37.283 12.8165 36.482 12.0161C35.6809 11.2151 34.8799 10.7231 33.9319 10.3556C33.0139 9.99951 31.9669 9.75681 30.4339 9.68661C28.8979 9.61671 28.4089 9.59961 24.4968 9.59961H24.5013ZM23.2095 12.1946C23.5929 12.194 24.0207 12.1946 24.5013 12.1946C28.3462 12.1946 28.8019 12.2084 30.3202 12.2774C31.7242 12.3416 32.4862 12.5762 32.9938 12.7733C33.6658 13.0343 34.1449 13.3463 34.6486 13.8503C35.1526 14.3543 35.4646 14.8343 35.7262 15.5063C35.9233 16.0133 36.1582 16.7753 36.2221 18.1793C36.2911 19.6973 36.3061 20.1533 36.3061 23.9963C36.3061 27.8393 36.2911 28.2953 36.2221 29.8133C36.1579 31.2173 35.9233 31.9793 35.7262 32.4863C35.4652 33.1583 35.1526 33.6368 34.6486 34.1405C34.1446 34.6445 33.6661 34.9565 32.9938 35.2175C32.4868 35.4155 31.7242 35.6495 30.3202 35.7137C28.8022 35.7827 28.3462 35.7977 24.5013 35.7977C20.6562 35.7977 20.2005 35.7827 18.6825 35.7137C17.2785 35.6489 16.5164 35.4143 16.0085 35.2172C15.3365 34.9562 14.8565 34.6442 14.3525 34.1402C13.8485 33.6362 13.5365 33.1574 13.2749 32.4851C13.0778 31.9781 12.8429 31.2161 12.779 29.8121C12.71 28.2941 12.6962 27.8381 12.6962 23.9927C12.6962 20.1473 12.71 19.6937 12.779 18.1757C12.8432 16.7717 13.0778 16.0097 13.2749 15.5021C13.5359 14.8301 13.8485 14.3501 14.3525 13.8461C14.8565 13.3421 15.3365 13.0301 16.0085 12.7685C16.5161 12.5705 17.2785 12.3365 18.6825 12.272C20.0109 12.212 20.5257 12.194 23.2095 12.191V12.1946ZM32.188 14.5856C31.234 14.5856 30.46 15.3587 30.46 16.313C30.46 17.267 31.234 18.041 32.188 18.041C33.142 18.041 33.916 17.267 33.916 16.313C33.916 15.359 33.142 14.585 32.188 14.585V14.5856ZM24.5013 16.6046C20.4174 16.6046 17.1062 19.9157 17.1062 23.9996C17.1062 28.0835 20.4174 31.3931 24.5013 31.3931C28.5853 31.3931 31.8952 28.0835 31.8952 23.9996C31.8952 19.9157 28.585 16.6046 24.501 16.6046H24.5013ZM24.5013 19.1996C27.1522 19.1996 29.3014 21.3485 29.3014 23.9996C29.3014 26.6504 27.1522 28.7996 24.5013 28.7996C21.8502 28.7996 19.7013 26.6504 19.7013 23.9996C19.7013 21.3485 21.8502 19.1996 24.5013 19.1996Z"
+                  fill="white" />
+                <defs>
+                  <radialGradient
+                    id="paint0_radial_2541_175"
+                    cx="0"
+                    cy="0"
+                    r="1"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(13.2501 51.697) rotate(-90) scale(47.5715 44.2453)">
+                    <stop stop-color="#FFDD55" />
+                    <stop offset="0.1" stop-color="#FFDD55" />
+                    <stop offset="0.5" stop-color="#FF543E" />
+                    <stop offset="1" stop-color="#C837AB" />
+                  </radialGradient>
+                  <radialGradient
+                    id="paint1_radial_2541_175"
+                    cx="0"
+                    cy="0"
+                    r="1"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(-7.54025 3.45784) rotate(78.6806) scale(21.2647 87.6539)">
+                    <stop stop-color="#3771C8" />
+                    <stop offset="0.128" stop-color="#3771C8" />
+                    <stop offset="1" stop-color="#6600FF" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </a>
+            <a href="https://wa.me/2348147486278" target="_blank">
+              <svg
+                class="h-[36px] w-[36px]"
+                viewBox="0 0 49 48"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24.5 48C37.7548 48 48.5 37.2548 48.5 24C48.5 10.7452 37.7548 0 24.5 0C11.2452 0 0.5 10.7452 0.5 24C0.5 37.2548 11.2452 48 24.5 48Z"
+                  fill="#25D366" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M25.2911 37.3523H25.2852C22.8967 37.3515 20.5498 36.7522 18.4654 35.6153L10.9 37.5998L12.9246 30.2046C11.6758 28.0403 11.0186 25.5853 11.0197 23.07C11.0228 15.2015 17.4248 8.7998 25.291 8.7998C29.1087 8.80145 32.6918 10.2877 35.3862 12.9852C38.0806 15.6826 39.5637 19.2681 39.5622 23.0813C39.559 30.9481 33.1595 37.3491 25.2911 37.3523ZM18.8159 33.0317L19.249 33.2888C21.0702 34.3695 23.1578 34.9413 25.2863 34.9421H25.2911C31.8289 34.9421 37.1499 29.6209 37.1526 23.0805C37.1538 19.911 35.9212 16.9309 33.6817 14.6888C31.4422 12.4467 28.464 11.2113 25.2958 11.2102C18.753 11.2102 13.4318 16.5309 13.4292 23.0709C13.4283 25.3122 14.0554 27.4949 15.2428 29.3834L15.5248 29.8322L14.3265 34.2094L18.8159 33.0317ZM31.9924 26.1539C32.2411 26.2741 32.4091 26.3552 32.4808 26.4749C32.5699 26.6236 32.5699 27.3376 32.2729 28.1707C31.9756 29.0036 30.5511 29.7638 29.8659 29.8661C29.2516 29.958 28.4742 29.9963 27.62 29.7248C27.102 29.5605 26.4379 29.3411 25.5871 28.9737C22.2442 27.5302 19.985 24.2902 19.5581 23.6778C19.5282 23.6349 19.5072 23.6049 19.4956 23.5893L19.4927 23.5855C19.304 23.3337 18.0395 21.6466 18.0395 19.9006C18.0395 18.258 18.8464 17.3971 19.2178 17.0008C19.2432 16.9737 19.2666 16.9487 19.2876 16.9258C19.6144 16.5688 20.0008 16.4796 20.2385 16.4796C20.4762 16.4796 20.7141 16.4818 20.9219 16.4922C20.9475 16.4935 20.9742 16.4933 21.0018 16.4932C21.2096 16.4919 21.4686 16.4904 21.7242 17.1043C21.8225 17.3406 21.9664 17.6908 22.1181 18.0602C22.425 18.8072 22.764 19.6326 22.8236 19.752C22.9128 19.9305 22.9722 20.1387 22.8534 20.3768C22.8355 20.4125 22.819 20.4461 22.8032 20.4783C22.714 20.6606 22.6483 20.7947 22.4968 20.9716C22.4372 21.0411 22.3756 21.1161 22.314 21.1911C22.1914 21.3405 22.0687 21.4899 21.9619 21.5963C21.7834 21.7741 21.5975 21.9671 21.8055 22.3241C22.0136 22.6811 22.7292 23.8487 23.7893 24.7943C24.9288 25.8107 25.9192 26.2403 26.4212 26.458C26.5192 26.5006 26.5986 26.535 26.6569 26.5642C27.0133 26.7427 27.2214 26.7128 27.4294 26.4749C27.6374 26.237 28.3208 25.4337 28.5585 25.0767C28.7962 24.7199 29.034 24.7793 29.3608 24.8983C29.6877 25.0174 31.4408 25.8799 31.7974 26.0584C31.867 26.0933 31.9321 26.1247 31.9924 26.1539Z"
+                  fill="white" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/Haggai_NG" target="_blank">
+              <svg
+                class="h-[36px] w-[36px] bg-black p-2 rounded-full"
+                viewBox="0 0 49 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.4816 24.3441L0.5 2H14.7427L25.8426 15.8102L37.7011 2.06218H45.5452L29.6352 20.529L48.5 44H34.2998L22.2809 29.0651L9.44951 43.9586H1.56289L18.4816 24.3441ZM36.3696 39.86L9.23314 6.13997H12.6713L39.7736 39.86H36.3696Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </div>
+          <p class="font-Poppins font-medium md:text-lg">Discover our app</p>
+          <div class="flex gap-4 items-center w-fit mx-auto">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.oti.oh"
+              target="”_blank”"
+              class="rounded-[20px] h-fit w-fit px-2 py-1 sm:w-fit bg-white text-[#0B325C] border border-[#0B325C] flex items-center gap-1 cursor-pointer text-left">
+              <svg
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 408 466.9"
+                class="w-[14px]">
+                <style>
+                  .st0 {
+                    fill: url(#SVGID_1_);
+                  }
+                  .st1 {
+                    fill: url(#SVGID_2_);
+                  }
+                  .st2 {
+                    fill: url(#SVGID_3_);
+                  }
+                  .st3 {
+                    fill: url(#SVGID_4_);
+                  }
+                </style>
+                <linearGradient
+                  id="SVGID_1_"
+                  gradientUnits="userSpaceOnUse"
+                  y1="112.094"
+                  x2="261.746"
+                  y2="112.094">
+                  <stop offset="0" stop-color="#63be6b" />
+                  <stop offset=".506" stop-color="#5bbc6a" />
+                  <stop offset="1" stop-color="#4ab96a" />
+                </linearGradient>
+                <path
+                  class="st0"
+                  d="M261.7 142.3L15 1.3C11.9-.5 8-.4 5 1.4c-3.1 1.8-5 5-5 8.6 0 0 .1 13 .2 34.4l179.7 179.7 81.8-81.8z" />
+                <linearGradient
+                  id="SVGID_2_"
+                  gradientUnits="userSpaceOnUse"
+                  x1=".152"
+                  y1="223.393"
+                  x2="179.896"
+                  y2="223.393">
+                  <stop offset="0" stop-color="#3ec6f2" />
+                  <stop offset="1" stop-color="#45afe3" />
+                </linearGradient>
+                <path
+                  class="st1"
+                  d="M.2 44.4C.5 121.6 1.4 309 1.8 402.3L180 224.1.2 44.4z" />
+                <linearGradient
+                  id="SVGID_3_"
+                  gradientUnits="userSpaceOnUse"
+                  x1="179.896"
+                  y1="229.464"
+                  x2="407.976"
+                  y2="229.464">
+                  <stop offset="0" stop-color="#faa51a" />
+                  <stop offset=".387" stop-color="#fab716" />
+                  <stop offset=".741" stop-color="#fac412" />
+                  <stop offset="1" stop-color="#fac80f" />
+                </linearGradient>
+                <path
+                  class="st2"
+                  d="M402.9 223l-141.2-80.7-81.9 81.8 92.4 92.4L403 240.3c3.1-1.8 5-5.1 5-8.6 0-3.6-2-6.9-5.1-8.7z" />
+                <linearGradient
+                  id="SVGID_4_"
+                  gradientUnits="userSpaceOnUse"
+                  x1="1.744"
+                  y1="345.521"
+                  x2="272.296"
+                  y2="345.521">
+                  <stop offset="0" stop-color="#ec3b50" />
+                  <stop offset="1" stop-color="#e7515b" />
+                </linearGradient>
+                <path
+                  class="st3"
+                  d="M1.7 402.3c.2 33.3.3 54.6.3 54.6 0 3.6 1.9 6.9 5 8.6 3.1 1.8 6.9 1.8 10 0l255.3-148.9-92.4-92.4L1.7 402.3z" />
+              </svg>
+              <span class="font-Poppins">
+                <p class="text-[8px] -mb-1.5 font-semibold">GET IT ON</p>
+                <p class="font-medium text-sm">Google Play</p>
+              </span>
+            </a>
+            <a
+              href="#"
+              class="rounded-[20px] h-fit px-2 py-1 w-fit bg-white text-[#0B325C] bg-white border border-[#0B325C] flex items-center gap-1 cursor-pointer text-left relative pointer-events-none">
+              <img
+                src="../src/images/coming-soon-banner.png"
+                class="absolute h-full top-0 left-0 rounded-b-xl"
+                alt="coming soon banner" />
+              <svg
+                class="w-[14px]"
+                viewBox="0 0 14 16"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.0538 4.57943L6.05418 4.57957L6.0581 4.58102C6.22757 4.64339 6.41539 4.71252 6.58703 4.76566C6.74618 4.81493 6.94979 4.86991 7.13235 4.86991C7.22633 4.86991 7.31528 4.85008 7.3733 4.83523C7.43913 4.81837 7.50773 4.7964 7.57247 4.77396C7.69605 4.73112 7.83329 4.67678 7.95117 4.6301L7.96597 4.62424L7.96685 4.62389C8.50309 4.41041 9.07964 4.18604 9.73976 4.18604H9.73977H9.73977H9.73978H9.73979H9.7398H9.73981H9.73981H9.73982H9.73983H9.73984H9.73985H9.73986H9.73986H9.73987H9.73988H9.73989H9.7399H9.73991H9.73991H9.73992H9.73993H9.73994H9.73995H9.73995H9.73996H9.73997H9.73998H9.73999H9.74H9.74H9.74001H9.74002H9.74003H9.74004H9.74005H9.74006H9.74006H9.74007H9.74008H9.74009H9.7401H9.74011H9.74011H9.74012H9.74013H9.74014H9.74015H9.74016H9.74017H9.74017H9.74018H9.74019H9.7402H9.74021H9.74022H9.74022H9.74023H9.74024H9.74025H9.74026H9.74027H9.74028H9.74029H9.74029H9.7403H9.74031H9.74032H9.74033H9.74034H9.74035H9.74036H9.74036H9.74037H9.74038H9.74039H9.7404H9.74041H9.74042H9.74043H9.74043H9.74044H9.74045H9.74046H9.74047H9.74048H9.74049H9.7405H9.7405H9.74051H9.74052H9.74053H9.74054H9.74055H9.74056H9.74057H9.74057H9.74058H9.74059H9.7406H9.74061H9.74062H9.74063H9.74064H9.74065H9.74065H9.74066H9.74067H9.74068H9.74069H9.7407H9.74071H9.74072H9.74073H9.74074H9.74074H9.74075H9.74076H9.74077H9.74078H9.74079H9.7408H9.74081H9.74082H9.74083H9.74084H9.74084H9.74085H9.74086H9.74087H9.74088H9.74089H9.7409H9.74091H9.74092H9.74093H9.74094H9.74094H9.74095H9.74096H9.74097H9.74098H9.74099H9.741H9.74101H9.74102H9.74103H9.74104H9.74104H9.74105H9.74106H9.74107H9.74108H9.74109H9.7411H9.74111H9.74112H9.74113H9.74114H9.74115H9.74116H9.74116H9.74117H9.74118H9.74119H9.7412H9.74121H9.74122H9.74123H9.74124H9.74125H9.74126H9.74127H9.74128H9.74128H9.74129H9.7413H9.74131H9.74132H9.74133H9.74134H9.74135H9.74136H9.74137H9.74138H9.74139H9.7414H9.74141H9.74142H9.74142H9.74143H9.74144H9.74145H9.74146H9.74147H9.74148H9.74149H9.7415H9.74151H9.74152H9.74153H9.74154H9.74155H9.74155H9.74156H9.74157H9.74158H9.74159H9.7416H9.74161H9.74162H9.74163H9.74164H9.74165H9.74166H9.74167H9.74168H9.74169H9.7417H9.7417H9.74171H9.74172H9.74173H9.74174H9.74175H9.74176H9.74177H9.74178H9.74179H9.7418H9.74181H9.74182H9.74183H9.74184H9.74185H9.74185H9.74186H9.74187H9.74188H9.74189H9.7419H9.74191H9.74192H9.74193H9.74194H9.74195H9.74196H9.74197H9.74198H9.74199H9.74199H9.742H9.74201H9.74202H9.74203H9.74204H9.74205H9.74206H9.74207H9.74208H9.74209H9.7421H9.74211H9.74212H9.74213H9.74214H9.74215H9.74216H9.74216H9.74217H9.74218H9.74219H9.7422H9.74221H9.74222H9.74223H9.74224H9.74225H9.74226H9.74227H9.74228H9.74229H9.7423H9.7423H9.74231H9.74232H9.74233H9.74234H9.74235H9.74236H9.74237H9.74238H9.74239H9.7424H9.74241H9.74242H9.74243H9.74244H9.74244H9.74245H9.74246H9.74247H9.74248H9.74249H9.7425H9.74251H9.74252H9.74253H9.74254H9.74255H9.74256H9.74257H9.74257H9.74258H9.74259H9.7426H9.74261H9.74262H9.74263H9.74264H9.74265H9.74266H9.74267H9.74268H9.74269H9.7427H9.74271H9.74271H9.74272H9.74273H9.74274H9.74275H9.74276H9.74277H9.74278H9.74279H9.7428H9.74281H9.74282H9.74282H9.74283H9.74284H9.74285H9.74286H9.74287H9.74288H9.74289H9.7429H9.74291H9.74292H9.74293H9.74294H9.74294H9.74295H9.74296H9.74297H9.74298H9.74299H9.743H9.74301H9.74302H9.74303H9.74304H9.74304H9.74305H9.74306H9.74307H9.74308H9.74309H9.7431H9.74311H9.74312H9.74313H9.74314H9.74314H9.74315H9.74316H9.74317H9.74318H9.74319H9.7432H9.74321H9.74322H9.74323H9.74323H9.74324H9.74325H9.74326H9.74327H9.74328H9.74329H9.7433H9.74331H9.74331H9.74332H9.74333H9.74334H9.74335H9.74336H9.74337H9.74338H9.74339H9.74339H9.7434H9.74341H9.74342H9.74343H9.74344H9.74345H9.74346H9.74347H9.74347H9.74348H9.74349H9.7435H9.74351H9.74352H9.74353H9.74354H9.74354H9.74355H9.74356H9.74357H9.74358H9.74359H9.7436H9.74361H9.74362H9.74362H9.74363H9.74364H9.74365H9.74366H9.74367H9.74368H9.74368H9.74369H9.7437H9.74371H9.74372H9.74373H9.74374H9.74374H9.74375H9.74376H9.74377H9.74378H9.74379H9.7438H9.7438H9.74381H9.74382H9.74383H9.74384H9.74385H9.74385H9.74386H9.74387H9.74388H9.74389H9.7439H9.74391H9.74391H9.74392H9.74393H9.74394H9.74395H9.74396H9.74396H9.74397H9.74398H9.74399H9.744H9.74401H9.74401H9.74402H9.74403H9.74404H9.74405H9.74405H9.74406H9.74407H9.74408H9.74409H9.7441H9.7441H9.74411H9.74412H9.74413H9.74414H9.74415H9.74415H9.74416H9.74417H9.74418H9.74419H9.74419H9.7442H9.74421H9.74422H9.74423H9.74423H9.74424H9.74425H9.74426H9.74427H9.74427H9.74428H9.74429H9.7443H9.7443H9.74431H9.74432C10.2747 4.18604 11.7687 4.30694 12.67 5.63486C12.1554 6.02302 11.0726 6.84893 11.0726 8.46188C11.0726 9.39334 11.3746 10.0667 11.7673 10.5501C12.1451 11.0152 12.5918 11.2839 12.8448 11.4361L12.8552 11.4423L12.8553 11.4424C12.913 11.4771 12.955 11.5025 12.9923 11.5283C13.0194 11.547 13.0374 11.5614 13.0493 11.5722C13.0414 11.5968 13.0314 11.6266 13.0191 11.6615C12.9763 11.7828 12.9108 11.9522 12.8238 12.1536C12.6497 12.5572 12.3953 13.0765 12.0752 13.587C11.7533 14.1005 11.3772 14.5851 10.9655 14.9363C10.5533 15.288 10.1421 15.4756 9.73654 15.4756C9.29184 15.4756 8.98131 15.3468 8.64046 15.2019C8.64043 15.2019 8.64039 15.2019 8.64035 15.2019L8.63213 15.1984C8.27513 15.0465 7.89578 14.8851 7.29482 14.8851C7.09717 14.8851 6.9001 14.9306 6.72916 14.9814C6.55764 15.0324 6.37848 15.0996 6.21464 15.161L6.20949 15.1629C6.20936 15.163 6.20924 15.163 6.20911 15.1631C5.73757 15.3391 5.29548 15.4998 4.80507 15.4998H4.79103C4.37204 15.497 3.91929 15.2801 3.45044 14.8322C2.98394 14.3865 2.54465 13.7514 2.16505 13.0181C1.40153 11.543 0.938477 9.78778 0.938477 8.64954C0.938477 6.77002 1.63508 5.68461 2.4146 5.05825C3.2178 4.41287 4.15333 4.22035 4.6412 4.22035C5.06209 4.22035 5.53739 4.38889 6.0538 4.57943Z"
+                  fill="white"
+                  stroke="#0B325C" />
+                <path
+                  d="M8.21916 1.45165C8.591 1.03507 9.03376 0.738266 9.45106 0.59569C9.2781 1.9252 8.38852 2.79373 7.48502 2.97798C7.54163 2.45288 7.80943 1.91068 8.21916 1.45165Z"
+                  fill="white"
+                  stroke="#0B325C" />
+              </svg>
+              <span class="font-Poppins">
+                <p class="text-[8px] -mb-1.5 font-semibold">Available on the</p>
+                <p class="font-medium text-sm">Apple Store</p>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/scripts/otherScript.js"></script>
+  </body>
+</html>
